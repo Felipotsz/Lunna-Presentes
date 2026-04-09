@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Veja todos os nossos produtos personalizados — canecas, camisas, cestas e muito mais. Encontre o presente perfeito!" />
+  <meta name="keywords" content="produtos personalizados, canecas, camisas, cestas, presentes" />
+  <meta name="author" content="Lunna Presentes" />
+  <title>Produtos | Lunna Presentes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="../../themes/themes.css">
+  <link rel="stylesheet" href="../../pages/home/home.css" />
+  <link rel="stylesheet" href="products.css" />
+
+  <!-- JavaScript -->
+  <script src="../../data/produtos.data.js" defer></script>
+  <script src="../../themes/themes.js"></script>
+  <script src="../../data/configs.data.js" defer></script>
+  <script src="../../index.js" defer></script>
+  <script src="products.js" defer></script>
+
+  <!-- Sistema de Acessibilidade -->
+  <script src="../../accessibility/accessibility.js"></script>
+  <link rel="stylesheet" href="../../accessibility/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/images/logo-lunna-presentes.jpg" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../../index.html" class="header-logo" aria-label="Lunna Presentes — página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="../../assets/images/logo-lunna-presentes.jpg" alt="Lunna Presentes Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          Lunna Presentes
+          <span>Personalizados com carinho</span>
+        </div>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Menu principal">
+        <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../../pages/about/about.html"><i class="fas fa-heart"></i> Sobre</a>
+        <a href="products.html" class="active"><i class="fas fa-store"></i> Produtos</a>
+        <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Ativar modo escuro">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#" id="header-whatsapp" class="btn btn-whatsapp header-cta" target="_blank" rel="noopener"
+          aria-label="Solicitar orçamento pelo WhatsApp">
+          <i class="fab fa-whatsapp"></i> Falar Conosco
+        </a>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <a href="../../index.html" data-nav><i class="fas fa-home"></i> Home</a>
+    <a href="../../pages/about/about.html" data-nav><i class="fas fa-heart"></i> Sobre</a>
+    <a href="../../pages/products/products.html" data-nav><i class="fas fa-store"></i> Produtos</a>
+    <a href="../../pages/contact/contact.html" data-nav><i class="fas fa-envelope"></i> Contato</a>
+    <div class="mobile-cta">
+      <a href="#" id="mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- HERO PRODUTOS -->
+    <section class="products-hero" aria-labelledby="products-hero-title">
+      <div class="products-hero-bg" aria-hidden="true"></div>
+      <div class="products-hero-overlay" aria-hidden="true"></div>
+      <div class="container products-hero-content">
+        <div class="hero-badge animate-fadeInUp">
+          <i class="fas fa-gift"></i> Catálogo completo
+        </div>
+        <h1 id="products-hero-title" class="animate-fadeInUp" style="animation-delay:.15s">
+          Nossos Produtos
+        </h1>
+        <p class="hero-sub animate-fadeInUp" style="animation-delay:.3s">
+          Encontre o presente perfeito para cada pessoa e cada momento especial.
+          Personalização, qualidade e carinho em cada detalhe.
+        </p>
+      </div>
+    </section>
+
+    <!-- BUSCA E FILTROS -->
+    <section class="products-controls" aria-label="Busca e filtros de produtos">
+      <div class="container">
+        <div class="controls-inner">
+
+          <!-- Busca -->
+          <div class="search-wrapper">
+            <label for="product-search" class="sr-only">Buscar produtos</label>
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="search" id="product-search" class="search-input" placeholder="Buscar por nome ou descrição..."
+              autocomplete="off" aria-label="Buscar produtos" />
+            <button class="search-clear" id="search-clear" aria-label="Limpar busca" hidden>✕</button>
+          </div>
+
+          <!-- Filtros de categoria -->
+          <div class="filters-row" role="group" aria-label="Filtrar por categoria">
+            <button class="filter-pill active" data-category="all" aria-pressed="true">
+              Todos
+              <span class="filter-count" id="count-all">0</span>
+            </button>
+            <button class="filter-pill" data-category="canecas" aria-pressed="false">
+              <i class="fas fa-mug-hot"></i> Canecas
+              <span class="filter-count" id="count-canecas">0</span>
+            </button>
+            <button class="filter-pill" data-category="camisas" aria-pressed="false">
+              <i class="fas fa-tshirt"></i> Camisas
+              <span class="filter-count" id="count-camisas">0</span>
+            </button>
+            <button class="filter-pill" data-category="cestas" aria-pressed="false">
+              <i class="fas fa-basket-shopping"></i> Cestas
+              <span class="filter-count" id="count-cestas">0</span>
+            </button>
+            <button class="filter-pill" data-category="personalizados" aria-pressed="false">
+              <i class="fas fa-pen-fancy"></i> Personalizados
+              <span class="filter-count" id="count-personalizados">0</span>
+            </button>
+          </div>
+
+          <!-- Status de resultados -->
+          <div class="results-status">
+            <span id="results-count" aria-live="polite" aria-atomic="true">
+              Carregando produtos...
+            </span>
+            <button class="clear-filters-btn" id="clear-filters" hidden>
+              ✕ Limpar filtros
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID DE PRODUTOS -->
+    <section class="products-catalog" aria-labelledby="catalog-title">
+      <div class="container">
+        <h2 class="sr-only" id="catalog-title">Catálogo de produtos</h2>
+
+        <!-- Estado de loading -->
+        <div class="products-loading" id="products-loading" aria-live="polite">
+          <div class="loading-grid">
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid principal -->
+        <div class="products-grid-full" id="products-grid" aria-live="polite" aria-label="Lista de produtos" role="list"
+          hidden></div>
+
+        <!-- Empty state -->
+        <div class="products-empty" id="products-empty" hidden>
+          <div class="empty-icon" aria-hidden="true">🔍</div>
+          <h3>Nenhum produto encontrado</h3>
+          <p>Tente buscar com outros termos ou explore outras categorias.</p>
+          <button class="btn btn-primary" id="empty-reset">Ver todos os produtos</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO "MONTE SEU PRESENTE" -->
+    <section class="section-monte" aria-labelledby="monte-title">
+      <div class="container">
+        <div class="monte-box reveal">
+          <div class="monte-icon" aria-hidden="true">
+            <i class="fas fa-gift"></i>
+          </div>
+          <div class="monte-text">
+            <h2 id="monte-title">Monte seu presente ideal</h2>
+            <p>Não sabe por onde começar? A gente te ajuda! Fale conosco pelo WhatsApp e juntos criamos o presente
+              perfeito para quem você ama — com a personalização, o estilo e o orçamento certos para você.</p>
+            <ul class="monte-lista">
+              <li><i class="fas fa-comment-dots"></i> Atendimento personalizado</li>
+              <li><i class="fas fa-palette"></i> Personalização total</li>
+              <li><i class="fas fa-heart"></i> Para qualquer ocasião</li>
+              <li><i class="fas fa-truck"></i> Entrega em todo Brasil</li>
+            </ul>
+          </div>
+          <a href="#" id="monte-whatsapp" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener"
+            aria-label="Montar presente pelo WhatsApp">
+            <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "NOSSAS COLEÇÕES" -->
+    <section class="section-categorias" aria-labelledby="categorias-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge"><i class="fas fa-tags"></i> Categorias</span>
+          <h2 class="section-title" id="categorias-title">Explore Nossas Coleções</h2>
+          <p class="section-subtitle">Encontre o presente ideal para cada pessoa</p>
+        </div>
+
+        <div class="categorias-grid">
+          <div class="categoria-card" data-category="canecas">
+            <div class="categoria-image">
+              <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&q=80"
+                alt="Canecas Personalizadas" loading="lazy" />
+            </div>
+            <div class="categoria-overlay">
+              <i class="fas fa-mug-hot"></i>
+              <h3>Canecas</h3>
+              <a href="pages/products/products.html?cat=canecas" class="btn btn-sm btn-outline">Ver Coleção</a>
+            </div>
+          </div>
+
+          <div class="categoria-card" data-category="camisas">
+            <div class="categoria-image">
+              <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=400&q=80"
+                alt="Camisas Personalizadas" loading="lazy" />
+            </div>
+            <div class="categoria-overlay">
+              <i class="fas fa-tshirt"></i>
+              <h3>Camisas</h3>
+              <a href="pages/products/products.html?cat=camisas" class="btn btn-sm btn-outline">Ver Coleção</a>
+            </div>
+          </div>
+
+          <div class="categoria-card" data-category="cestas">
+            <div class="categoria-image">
+              <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400&q=80" alt="Cestas de Presentes"
+                loading="lazy" />
+            </div>
+            <div class="categoria-overlay">
+              <i class="fas fa-basket-shopping"></i>
+              <h3>Cestas</h3>
+              <a href="pages/products/products.html?cat=cestas" class="btn btn-sm btn-outline">Ver Coleção</a>
+            </div>
+          </div>
+
+          <div class="categoria-card" data-category="personalizados">
+            <div class="categoria-image">
+              <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=400&q=80" alt="Personalizados"
+                loading="lazy" />
+            </div>
+            <div class="categoria-overlay">
+              <i class="fas fa-pen-fancy"></i>
+              <h3>Personalizados</h3>
+              <a href="pages/products/products.html?cat=personalizados" class="btn btn-sm btn-outline">Ver Coleção</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "CONTATO" -->
+    <section class="section-contato" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info reveal">
+            <span class="section-badge"><i class="fas fa-headset"></i> Atendimento</span>
+            <h2 id="contato-title">Estamos aqui para ajudar</h2>
+            <p>Tire suas dúvidas, faça um orçamento ou peça ajuda para montar o presente perfeito.</p>
+            <ul class="contato-list">
+              <li><i class="fas fa-check-circle"></i> Produção em até 3 dias úteis</li>
+              <li><i class="fas fa-gift"></i> Embalagem especial para presente</li>
+              <li><i class="fas fa-envelope"></i> Cartão mensagem incluído</li>
+              <li><i class="fas fa-shield-alt"></i> Garantia de qualidade</li>
+            </ul>
+            <div class="contato-actions">
+              <a href="#" id="contato-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener"
+                aria-label="Falar pelo WhatsApp">
+                <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+              </a>
+              <a href="#" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Enviar e-mail
+              </a>
+            </div>
+          </div>
+          <div class="contato-card reveal">
+            <div class="contato-destaques">
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                <div>
+                  <strong>Localização</strong>
+                  <p>São Paulo, SP — Atendemos online e presencial</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                <div>
+                  <strong>Horário</strong>
+                  <p>Segunda a Sábado, das 9h às 18h</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-credit-card"></i></span>
+                <div>
+                  <strong>Pagamento</strong>
+                  <p>PIX, cartão de crédito e débito</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-truck"></i></span>
+                <div>
+                  <strong>Envios</strong>
+                  <p>Correios, Motoboy e retirada local</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text" style="margin-bottom:12px">
+            <i class="fas fa-gift"></i> Lunna Presentes
+            <span>Personalizados com carinho</span>
+          </div>
+          <p>Transformamos momentos em memórias eternas com presentes únicos e cheios de significado.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" id="footer-whatsapp" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-payment">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-pix"></i>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2024 Lunna Presentes. Feito com <i class="fas fa-heart"></i> para você.</p>
+            <p>Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

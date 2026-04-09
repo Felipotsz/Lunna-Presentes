@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Conheça a história da Lunna Presentes — uma microempreendedora apaixonada por criar presentes únicos e especiais." />
+  <meta name="keywords" content="sobre lunna presentes, história, missão, visão, valores, presentes personalizados" />
+  <meta name="author" content="Lunna Presentes" />
+  <title>Sobre Nós | Lunna Presentes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="../../themes/themes.css">
+  <link rel="stylesheet" href="about.css" />
+
+  <!-- JavaScript -->
+  <script src="../../index.js" defer></script>
+  <script src="../../themes/themes.js"></script>
+  <script src="../../data/configs.data.js" defer></script>
+  <script src="../../data/depoimentos.data.js"></script>
+  <script src="about.js" defer></script>
+
+  <!-- Sistema de Acessibilidade -->
+  <script src="../../accessibility/accessibility.js"></script>
+  <link rel="stylesheet" href="../../accessibility/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/images/logo-lunna-presentes.jpg" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../../index.html" class="header-logo" aria-label="Lunna Presentes — página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="../../assets/images/logo-lunna-presentes.jpg" alt="Lunna Presentes Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          Lunna Presentes
+          <span>Personalizados com carinho</span>
+        </div>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Menu principal">
+        <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="about.html" class="active"><i class="fas fa-heart"></i> Sobre</a>
+        <a href="../../pages/products/products.html"><i class="fas fa-store"></i> Produtos</a>
+        <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Ativar modo escuro">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#" id="header-whatsapp" class="btn btn-whatsapp header-cta" target="_blank" rel="noopener"
+          aria-label="Solicitar orçamento pelo WhatsApp">
+          <i class="fab fa-whatsapp"></i> Falar Conosco
+        </a>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <a href="../../index.html" data-nav><i class="fas fa-home"></i> Home</a>
+    <a href="about.html" data-nav><i class="fas fa-heart"></i> Sobre</a>
+    <a href="../../pages/products/products.html" data-nav><i class="fas fa-store"></i> Produtos</a>
+    <a href="../../pages/contact/contact.html" data-nav><i class="fas fa-envelope"></i> Contato</a>
+    <div class="mobile-cta">
+      <a href="#" id="mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- HERO SOBRE -->
+    <section class="about-hero" aria-labelledby="about-hero-title">
+      <div class="about-hero-bg" aria-hidden="true"></div>
+      <div class="about-hero-overlay" aria-hidden="true"></div>
+      <div class="container about-hero-content">
+        <div class="hero-badge animate-fadeInUp">
+          <i class="fas fa-star"></i> Nossa história
+        </div>
+        <h1 id="about-hero-title" class="animate-fadeInUp" style="animation-delay:.15s">
+          Feito com amor,<br />entregue com carinho
+        </h1>
+        <p class="hero-sub animate-fadeInUp" style="animation-delay:.3s">
+          Cada produto carrega um pedaço do nosso coração e a história de quem presenteia.
+        </p>
+        <div class="hero-btns animate-fadeInUp" style="animation-delay:.45s">
+          <a href="#historia" class="btn btn-outline"
+            style="background: rgba(255,255,255,0.2); border-color: rgba(255,255,255,0.3); color: #fff;">
+            <i class="fas fa-chevron-down"></i> Conheça nossa história
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section class="about-historia" id="historia" aria-labelledby="historia-title">
+      <div class="container">
+        <div class="historia-grid">
+          <div class="historia-text reveal">
+            <span class="section-badge"><i class="fas fa-heart"></i> Nossa trajetória</span>
+            <h2 id="historia-title">A história por trás de cada presente</h2>
+            <p>
+              Tudo começou em 2018, quando Ana Paula descobriu a paixão por criar presentes que fossem além do comum.
+              Em sua pequena bancada, ela começou a personalizar canecas para amigos e familiares — e o encantamento
+              das pessoas ao receberem algo único foi o combustível para transformar esse amor em negócio.
+            </p>
+            <p>
+              Hoje, anos depois, a Lunna Presentes já realizou mais de <strong>5.000 entregas</strong>, cada uma
+              delas carregando uma história, uma emoção, um momento especial. De aniversários a casamentos, de bebês
+              chegando ao mundo a profissionais sendo homenageados — somos parte de memórias que ficam para sempre.
+            </p>
+            <p>
+              Cada produto é criado com atenção absoluta aos detalhes. Porque um presente não é apenas um objeto —
+              é a materialização do amor que você sente pela pessoa.
+            </p>
+            <div class="historia-btns"
+              style="display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap;">
+              <a href="#" id="historia-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> Fale com a Ana Paula
+              </a>
+              <a href="../products/products.html" class="btn btn-outline">
+                <i class="fas fa-gift"></i> Ver produtos
+              </a>
+            </div>
+          </div>
+          <div class="historia-image reveal">
+            <div class="historia-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
+                alt="Ana Paula em seu ateliê personalizando presentes" loading="lazy" />
+            </div>
+            <div class="historia-badge">
+              <span class="badge-number">5.000+</span>
+              <span class="badge-label">Presentes Entregues</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSÃO / VISÃO / VALORES -->
+    <section class="about-mvv" aria-labelledby="mvv-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-bullseye"></i> Propósito</span>
+          <h2 class="section-title" id="mvv-title">O que nos move todos os dias</h2>
+          <p class="section-subtitle">Missão, visão e valores que guiam cada criação</p>
+        </div>
+
+        <div class="mvv-grid">
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
+            <h3>Missão</h3>
+            <p>Transformar momentos em memórias eternas através de presentes únicos e personalizados, criados com amor e
+              dedicação para cada cliente.</p>
+          </div>
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-eye"></i></div>
+            <h3>Visão</h3>
+            <p>Ser referência em presentes personalizados em São Paulo, reconhecida pela qualidade, criatividade e pelo
+              atendimento humanizado que ofertamos.</p>
+          </div>
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+            <h3>Valores</h3>
+            <ul class="mvv-values">
+              <li><i class="fas fa-heart" style="color: var(--primary); margin-right: 8px;"></i> Amor em cada detalhe
+              </li>
+              <li><i class="fas fa-lightbulb" style="color: var(--accent); margin-right: 8px;"></i> Criatividade sem
+                limites</li>
+              <li><i class="fas fa-handshake" style="color: #25D366; margin-right: 8px;"></i> Compromisso com o cliente
+              </li>
+              <li><i class="fas fa-medal" style="color: #FFD700; margin-right: 8px;"></i> Qualidade acima de tudo</li>
+              <li><i class="fas fa-seedling" style="color: #4CAF50; margin-right: 8px;"></i> Crescimento sustentável
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NÚMEROS QUE IMPRESSIONAM -->
+    <section class="about-numbers" aria-labelledby="numbers-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge" style="background: rgba(255,255,255,0.2); color: #fff;"><i
+              class="fas fa-chart-line"></i> Resultados</span>
+          <h2 class="section-title" id="numbers-title" style="color:#fff">Números que impressionam</h2>
+          <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">O reflexo do nosso compromisso com você</p>
+        </div>
+
+        <div class="numbers-grid">
+          <div class="number-card reveal">
+            <span class="number-value" data-target="5000">0</span>
+            <span class="number-label"><i class="fas fa-gift"></i> Presentes entregues</span>
+          </div>
+          <div class="number-card reveal">
+            <span class="number-value" data-target="6">0</span>
+            <span class="number-label"><i class="fas fa-calendar-alt"></i> Anos de experiência</span>
+          </div>
+          <div class="number-card reveal">
+            <span class="number-value" data-target="98">0</span>
+            <span class="number-label"><i class="fas fa-smile"></i> % de satisfação</span>
+          </div>
+          <div class="number-card reveal">
+            <span class="number-value" data-target="500">0</span>
+            <span class="number-label"><i class="fas fa-users"></i> Clientes fidelizados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== NOSSO ATELIÊ ====== -->
+    <section class="about-galeria" aria-labelledby="galeria-about-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-camera"></i> Por dentro</span>
+          <h2 class="section-title" id="galeria-about-title">Nosso ateliê</h2>
+          <p class="section-subtitle">Veja de pertinho onde a mágica acontece</p>
+        </div>
+
+        <div class="about-galeria-grid reveal">
+          <div class="about-gal-item">
+            <img src="https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=500&q=80"
+              alt="Ateliê de presentes personalizados" loading="lazy" />
+            <div class="gal-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="about-gal-item">
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500&q=80"
+              alt="Cesta personalizada sendo montada" loading="lazy" />
+            <div class="gal-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+          <div class="about-gal-item">
+            <img src="https://images.unsplash.com/photo-1602523961358-f9f03dd557db?w=500&q=80"
+              alt="Velas e aromas artesanais" loading="lazy" />
+            <div class="gal-overlay">
+              <i class="fas fa-search-plus"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vídeo -->
+        <div class="about-video reveal">
+          <h3><i class="fas fa-play-circle"></i> Um pedacinho do processo</h3>
+          <div class="video-wrapper">
+            <video controls preload="metadata"
+              poster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80"
+              aria-label="Vídeo mostrando o processo de personalização dos produtos">
+              <source src="../../assets/videos/atelier.mp4" type="video/mp4" />
+              <p>Seu navegador não suporta vídeo HTML5.
+                <a href="../../assets/videos/atelier.mp4">Clique para baixar o vídeo</a>.
+              </p>
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="about-depoimentos" aria-labelledby="depoimentos-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-comment-dots"></i> Depoimentos</span>
+          <h2 class="section-title" id="depoimentos-title">O que nossos clientes dizem</h2>
+          <p class="section-subtitle">Histórias reais de quem já viveu a experiência Lunna</p>
+        </div>
+
+        <div class="depoimentos-grid" id="depoimentos-grid">
+          <!-- Os depoimentos serão inseridos dinamicamente via JavaScript -->
+        </div>
+
+        <div class="depoimentos-ver-mais reveal">
+          <button id="ver-mais-depoimentos" class="btn btn-outline">
+            <i class="fas fa-comments"></i> Ver todos os depoimentos
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "CONTATO" -->
+    <section class="section-contato" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info reveal">
+            <span class="section-badge"><i class="fas fa-headset"></i> Atendimento</span>
+            <h2 id="contato-title">Estamos aqui para ajudar</h2>
+            <p>Tire suas dúvidas, faça um orçamento ou peça ajuda para montar o presente perfeito.</p>
+            <ul class="contato-list">
+              <li><i class="fas fa-check-circle"></i> Produção em até 3 dias úteis</li>
+              <li><i class="fas fa-gift"></i> Embalagem especial para presente</li>
+              <li><i class="fas fa-envelope"></i> Cartão mensagem incluído</li>
+              <li><i class="fas fa-shield-alt"></i> Garantia de qualidade</li>
+            </ul>
+            <div class="contato-actions">
+              <a href="#" id="contato-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener"
+                aria-label="Falar pelo WhatsApp">
+                <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+              </a>
+              <a href="#" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Enviar e-mail
+              </a>
+            </div>
+          </div>
+          <div class="contato-card reveal">
+            <div class="contato-destaques">
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                <div>
+                  <strong>Localização</strong>
+                  <p>São Paulo, SP — Atendemos online e presencial</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                <div>
+                  <strong>Horário</strong>
+                  <p>Segunda a Sábado, das 9h às 18h</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-credit-card"></i></span>
+                <div>
+                  <strong>Pagamento</strong>
+                  <p>PIX, cartão de crédito e débito</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-truck"></i></span>
+                <div>
+                  <strong>Envios</strong>
+                  <p>Correios, Motoboy e retirada local</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!--  FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text" style="margin-bottom:12px">
+            <i class="fas fa-gift"></i> Lunna Presentes
+            <span>Personalizados com carinho</span>
+          </div>
+          <p>Transformamos momentos em memórias eternas com presentes únicos e cheios de significado.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" id="footer-whatsapp" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-payment">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-pix"></i>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2024 Lunna Presentes. Feito com <i class="fas fa-heart"></i> para você.</p>
+            <p>Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de Acessibilidade -->
+  <button id="accessibility-toggle" class="accessibility-toggle"
+    aria-label="Abrir painel de configurações de acessibilidade" aria-expanded="false"
+    aria-controls="accessibility-panel">
+    <i class="fas fa-universal-access" aria-hidden="true"></i>
+    <span class="sr-only">Acessibilidade</span>
+  </button>
+
+  <!-- Painel de Acessibilidade -->
+  <aside id="accessibility-panel" class="accessibility-panel" aria-label="Painel de Configurações de Acessibilidade"
+    aria-hidden="true" role="dialog">
+
+    <div class="panel-header">
+      <div class="panel-title">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+        <h2>Acessibilidade</h2>
+      </div>
+      <button id="close-panel" class="close-panel" aria-label="Fechar painel">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="panel-content">
+      <!-- Seção: Tamanho da Fonte -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-font" aria-hidden="true"></i>
+          Tamanho da Fonte
+        </h3>
+        <div class="font-controls">
+          <button id="decrease-font" class="accessibility-btn" aria-label="Diminuir fonte">
+            <i class="fas fa-minus"></i><span>A-</span>
+          </button>
+          <div class="font-display" id="current-font-size">100%</div>
+          <button id="increase-font" class="accessibility-btn" aria-label="Aumentar fonte">
+            <i class="fas fa-plus"></i><span>A+</span>
+          </button>
+          <button id="reset-font" class="accessibility-btn reset-btn">
+            <i class="fas fa-undo"></i><span>Padrão</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Seção: Contraste -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-adjust"></i>
+          Contraste
+        </h3>
+        <button id="toggle-contrast" class="accessibility-btn contrast-btn" aria-pressed="false">
+          <i class="fas fa-circle"></i><span>Alto Contraste</span>
+        </button>
+      </section>
+
+      <!-- Seção: Modo de Visão -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-eye"></i>
+          Modo de Visão
+        </h3>
+        <div class="vision-buttons">
+          <button id="colorblind-mode" class="accessibility-btn vision-btn" aria-pressed="false">
+            <i class="fas fa-eye"></i><span>Visão Normal</span>
+          </button>
+          <button id="reduced-motion" class="accessibility-btn vision-btn" aria-pressed="false">
+            <i class="fas fa-running"></i><span>Reduzir Animações</span>
+          </button>
+        </div>
+        <div class="vision-info" style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-light);">
+          <small>Clique para alternar entre modos: Normal → Deuteranopia → Protanopia → Tritanopia
+            →
+            Acromatopsia</small>
+        </div>
+      </section>
+
+      <!-- Seção: Leitura -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-book-reader"></i>
+          Leitura
+        </h3>
+        <button id="highlight-links" class="accessibility-btn" aria-pressed="false">
+          <i class="fas fa-link"></i><span>Destacar Links</span>
+        </button>
+      </section>
+
+      <!-- Seção: Navegação -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-mouse-pointer"></i>
+          Navegação
+        </h3>
+        <button id="focus-helper" class="accessibility-btn" aria-pressed="false">
+          <i class="fas fa-crosshairs"></i><span>Foco Aumentado</span>
+        </button>
+      </section>
+
+      <!-- Seção: Ajuda -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-life-ring"></i>
+          Ajuda
+        </h3>
+        <button id="keyboard-shortcuts" class="accessibility-btn">
+          <i class="fas fa-keyboard"></i><span>Atalhos</span>
+        </button>
+        <button id="reset-all" class="accessibility-btn reset-all-btn">
+          <i class="fas fa-redo"></i><span>Restaurar Padrões</span>
+        </button>
+      </section>
+    </div>
+
+    <div class="panel-footer">
+      <div class="status-indicator">
+        <i class="fas fa-check-circle"></i>
+        <span id="status-message">Configurações aplicadas</span>
+      </div>
+      <div class="panel-info">
+        <small>Configurações salvas automaticamente</small>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Painel -->
+  <div id="panel-overlay" class="panel-overlay" aria-hidden="true"></div>
+
+  <!-- Modal de Atalhos -->
+  <div id="shortcuts-modal" class="accessibility-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Atalhos de Teclado</h3>
+        <button id="close-shortcuts" class="close-modal" aria-label="Fechar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="shortcuts-list">
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>A</kbd> <span>Abrir/Fechar
+              painel</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>+</kbd> <span>Aumentar fonte</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>-</kbd> <span>Diminuir fonte</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>C</kbd> <span>Alto contraste</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>D</kbd> <span>Modo daltônico</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>R</kbd> <span>Reduzir animações</span>
+          </div>
+          <div class="shortcut-item"><kbd>Tab</kbd> <span>Navegar entre elementos</span></div>
+          <div class="shortcut-item"><kbd>Esc</kbd> <span>Fechar painéis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

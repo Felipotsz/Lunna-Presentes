@@ -1,0 +1,64 @@
+:root {
+  /* Cores principais da marca */
+  --primary: #FF6F91;
+  --secondary: #A0E7E5;
+  --accent: #F9C74F;
+  --highlight: #C77DFF;
+  
+  /* Cores de superfície e texto */
+  --text-dark: #333333;
+  --text-light: #6c757d;
+  --text-muted: #8a8a8a;
+  --bg: #FFFFFF;
+  --bg-soft: #FFF5F7;
+  --bg-card: #FFFFFF;
+  --border: #FFE4E9;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+
+  /* Tipografia */
+  --font-display: 'Poppins', 'Quicksand', sans-serif;
+  --font-body: 'Inter', 'Roboto', sans-serif;
+
+  /* Espaçamento (8px grid) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* Bordas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transições */
+  --transition: 0.3s ease;
+  --transition-fast: 0.15s ease;
+
+  /* Largura máxima */
+  --max-width: 1200px;
+}
+
+[data-theme="dark"] {
+  --primary: #FF8FAB;
+  --secondary: #72DDF7;
+  --accent: #F9C74F;
+  --highlight: #D9A7FF;
+  
+  --text-dark: #F5F5F5;
+  --text-light: #CCCCCC;
+  --text-muted: #999999;
+  --bg: #1E1E2E;
+  --bg-soft: #2A2A3A;
+  --bg-card: #2D2D3A;
+  --border: #4A4A5A;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+}

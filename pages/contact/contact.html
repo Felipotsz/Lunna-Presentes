@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Entre em contato com a Lunna Presentes. Tire dúvidas, solicite orçamentos ou envie sua mensagem. Atendimento rápido e personalizado." />
+  <meta name="keywords" content="contato lunna presentes, whatsapp, email, telefone, orçamento" />
+  <meta name="author" content="Lunna Presentes" />
+  <title>Contato | Lunna Presentes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="../../themes/themes.css">
+  <link rel="stylesheet" href="contact.css" />
+
+  <!-- JavaScript -->
+  <script src="../../index.js" defer></script>
+  <script src="../../themes/themes.js"></script>
+  <script src="../../data/configs.data.js" defer></script>
+  <script src="contact.js" defer></script>
+
+  <!-- Sistema de Acessibilidade -->
+  <script src="../../accessibility/accessibility.js"></script>
+  <link rel="stylesheet" href="../../accessibility/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/images/logo-lunna-presentes.jpg" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="../../index.html" class="header-logo" aria-label="Lunna Presentes — página inicial">
+        <div class="logo-icon" aria-hidden="true">
+          <img src="../../assets/images/logo-lunna-presentes.jpg" alt="Lunna Presentes Logo" class="logo-img" />
+        </div>
+        <div class="logo-text">
+          Lunna Presentes
+          <span>Personalizados com carinho</span>
+        </div>
+      </a>
+
+      <nav class="header-nav" role="navigation" aria-label="Menu principal">
+        <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="../../about/about.html"><i class="fas fa-heart"></i> Sobre</a>
+        <a href="../../products/products.html"><i class="fas fa-store"></i> Produtos</a>
+        <a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Ativar modo escuro">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#" id="header-whatsapp" class="btn btn-whatsapp header-cta" target="_blank" rel="noopener"
+          aria-label="Solicitar orçamento pelo WhatsApp">
+          <i class="fab fa-whatsapp"></i> Falar Conosco
+        </a>
+        <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+    <a href="../../index.html" data-nav><i class="fas fa-home"></i> Home</a>
+    <a href="../../about/about.html" data-nav><i class="fas fa-heart"></i> Sobre</a>
+    <a href="../../products/products.html" data-nav><i class="fas fa-store"></i> Produtos</a>
+    <a href="contact.html" data-nav><i class="fas fa-envelope"></i> Contato</a>
+    <div class="mobile-cta">
+      <a href="#" id="mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+    </div>
+  </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- HERO CONTATO -->
+    <section class="contact-hero" aria-labelledby="contact-hero-title">
+      <div class="contact-hero-bg" aria-hidden="true"></div>
+      <div class="contact-hero-overlay" aria-hidden="true"></div>
+      <div class="container contact-hero-content">
+        <div class="hero-badge animate-fadeInUp">
+          <i class="fas fa-headset"></i> Atendimento Personalizado
+        </div>
+        <h1 id="contact-hero-title" class="animate-fadeInUp" style="animation-delay:.15s">
+          Fale Conosco
+        </h1>
+        <p class="hero-sub animate-fadeInUp" style="animation-delay:.3s">
+          Estamos prontos para atender você. Tire dúvidas, solicite um orçamento ou envie sua mensagem.
+          Sua satisfação é nossa prioridade!
+        </p>
+      </div>
+    </section>
+
+    <!-- CARDS DE CONTATO RÁPIDO -->
+    <section class="contact-cards" aria-label="Canais de atendimento">
+      <div class="container">
+        <div class="contact-cards-grid">
+          <div class="contact-card-item reveal">
+            <div class="card-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <h3>WhatsApp</h3>
+            <p>Resposta rápida e atendimento personalizado</p>
+            <a href="#" id="card-whatsapp" class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> Chamar Agora
+            </a>
+          </div>
+
+          <div class="contact-card-item reveal">
+            <div class="card-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <h3>E-mail</h3>
+            <p>Para dúvidas mais detalhadas ou orçamentos</p>
+            <a href="mailto:contato@lunnapresentes.com.br" class="btn btn-outline btn-sm">
+              <i class="fas fa-envelope"></i> contato@lunnapresentes.com.br
+            </a>
+          </div>
+
+          <div class="contact-card-item reveal">
+            <div class="card-icon">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3>Telefone</h3>
+            <p>Atendimento presencial e suporte</p>
+            <a href="tel:+5511999999999" class="btn btn-outline btn-sm">
+              <i class="fas fa-phone"></i> (11) 99999-9999
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULÁRIO + INFORMAÇÕES -->
+    <section class="contact-form-section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Formulário -->
+          <div class="contact-form-wrapper reveal">
+            <div class="section-badge-inline">
+              <i class="fas fa-pen-alt"></i> Envie sua mensagem
+            </div>
+            <h2 id="form-title">Fale diretamente conosco</h2>
+            <p>Preencha o formulário abaixo e retornaremos o mais breve possível.</p>
+
+            <form id="contact-form" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">
+                    <i class="fas fa-user"></i> Nome completo *
+                  </label>
+                  <input type="text" id="name" name="name" required placeholder="Seu nome completo" />
+                  <span class="error-message" id="name-error"></span>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">
+                    <i class="fas fa-envelope"></i> E-mail *
+                  </label>
+                  <input type="email" id="email" name="email" required placeholder="seu@email.com" />
+                  <span class="error-message" id="email-error"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="phone">
+                    <i class="fas fa-phone"></i> Telefone / WhatsApp
+                  </label>
+                  <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" />
+                </div>
+
+                <div class="form-group">
+                  <label for="subject">
+                    <i class="fas fa-tag"></i> Assunto *
+                  </label>
+                  <select id="subject" name="subject" required>
+                    <option value="">Selecione um assunto</option>
+                    <option value="orcamento">Solicitar Orçamento</option>
+                    <option value="duvida">Dúvida sobre produtos</option>
+                    <option value="personalizacao">Personalização</option>
+                    <option value="entrega">Entrega e Prazos</option>
+                    <option value="outros">Outros assuntos</option>
+                  </select>
+                  <span class="error-message" id="subject-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">
+                  <i class="fas fa-comment"></i> Mensagem *
+                </label>
+                <textarea id="message" name="message" rows="5" required
+                  placeholder="Descreva sua dúvida ou solicitação..."></textarea>
+                <span class="error-message" id="message-error"></span>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="privacy" required />
+                  <span class="checkmark"></span>
+                  Aceito a <a href="#" id="privacy-link">Política de Privacidade</a> *
+                </label>
+                <span class="error-message" id="privacy-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+              </button>
+
+              <div id="form-status" class="form-status" style="display: none;"></div>
+            </form>
+          </div>
+
+          <!-- Informações de contato -->
+          <div class="contact-info-wrapper reveal">
+            <div class="contact-info-card">
+              <div class="section-badge-inline">
+                <i class="fas fa-map-marker-alt"></i> Onde estamos
+              </div>
+              <h2>Informações de Contato</h2>
+
+              <div class="info-list">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-map-pin"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Endereço</strong>
+                    <p>Rua Exemplo, 123 - Vila Olímpia<br />São Paulo - SP, 04538-132</p>
+                    <a href="https://maps.google.com" target="_blank" rel="noopener" class="info-link">
+                      <i class="fas fa-external-link-alt"></i> Ver no mapa
+                    </a>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Horário de Funcionamento</strong>
+                    <p>Segunda a Sexta: 9h às 18h<br />Sábado: 9h às 13h<br />Domingo: Fechado</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-credit-card"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Formas de Pagamento</strong>
+                    <p>PIX (5% desconto), Cartão de Crédito (até 12x), Cartão de Débito, Boleto</p>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-truck"></i>
+                  </div>
+                  <div class="info-content">
+                    <strong>Entregas</strong>
+                    <p>São Paulo (motoboy) • Todo Brasil (Correios) • Retirada local</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-connect">
+                <h4><i class="fas fa-share-alt"></i> Redes Sociais</h4>
+                <div class="social-links">
+                  <a href="#" class="social-icon" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a href="#" class="social-icon" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                  <a href="#" id="footer-whatsapp" class="social-icon" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="contact-map" aria-labelledby="map-title">
+      <div class="container">
+        <div class="map-wrapper reveal">
+          <h2 id="map-title" class="sr-only">Nossa localização</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.097812909013!2d-46.682985!3d-23.565568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce582c5f3c6d8b%3A0x2f6f7c0f5e3d8a4f!2sVila%20Ol%C3%ADmpia%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr"
+            width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa mostrando a localização da Lunna Presentes">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ CONTATO -->
+    <section class="contact-faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-question-circle"></i> Dúvidas Frequentes</span>
+          <h2 class="section-title" id="faq-title">Perguntas sobre Atendimento</h2>
+          <p class="section-subtitle">Tire suas dúvidas antes de entrar em contato</p>
+        </div>
+
+        <div class="faq-list reveal" id="contact-faq-list">
+          <!-- FAQ items serão inseridos via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER WHATSAPP -->
+    <section class="contact-banner" aria-labelledby="banner-title">
+      <div class="container">
+        <div class="banner-box reveal">
+          <div class="banner-icon" aria-hidden="true">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="banner-text">
+            <h2 id="banner-title">Atendimento via WhatsApp</h2>
+            <p>Resposta rápida, orçamento em minutos e acompanhamento personalizado.</p>
+            <ul class="banner-lista">
+              <li><i class="fas fa-bolt"></i> Resposta em até 5min</li>
+              <li><i class="fas fa-image"></i> Envio de fotos e artes</li>
+              <li><i class="fas fa-chart-line"></i> Acompanhamento do pedido</li>
+            </ul>
+          </div>
+          <a href="#" id="banner-whatsapp" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Falar Agora
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text" style="margin-bottom:12px">
+            <i class="fas fa-gift"></i> Lunna Presentes
+            <span>Personalizados com carinho</span>
+          </div>
+          <p>Transformamos momentos em memórias eternas com presentes únicos e cheios de significado.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" id="footer-whatsapp" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp"><i
+                class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-payment">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-pix"></i>
+          </div>
+          <div class="footer-copyright">
+            <p>© 2024 Lunna Presentes. Feito com <i class="fas fa-heart"></i> para você.</p>
+            <p>Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão de Acessibilidade -->
+  <button id="accessibility-toggle" class="accessibility-toggle"
+    aria-label="Abrir painel de configurações de acessibilidade" aria-expanded="false"
+    aria-controls="accessibility-panel">
+    <i class="fas fa-universal-access" aria-hidden="true"></i>
+    <span class="sr-only">Acessibilidade</span>
+  </button>
+
+  <!-- Painel de Acessibilidade -->
+  <aside id="accessibility-panel" class="accessibility-panel" aria-label="Painel de Configurações de Acessibilidade"
+    aria-hidden="true" role="dialog">
+
+    <div class="panel-header">
+      <div class="panel-title">
+        <i class="fas fa-universal-access" aria-hidden="true"></i>
+        <h2>Acessibilidade</h2>
+      </div>
+      <button id="close-panel" class="close-panel" aria-label="Fechar painel">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="panel-content">
+      <!-- Seção: Tamanho da Fonte -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-font" aria-hidden="true"></i>
+          Tamanho da Fonte
+        </h3>
+        <div class="font-controls">
+          <button id="decrease-font" class="accessibility-btn" aria-label="Diminuir fonte">
+            <i class="fas fa-minus"></i><span>A-</span>
+          </button>
+          <div class="font-display" id="current-font-size">100%</div>
+          <button id="increase-font" class="accessibility-btn" aria-label="Aumentar fonte">
+            <i class="fas fa-plus"></i><span>A+</span>
+          </button>
+          <button id="reset-font" class="accessibility-btn reset-btn">
+            <i class="fas fa-undo"></i><span>Padrão</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Seção: Contraste -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-adjust"></i>
+          Contraste
+        </h3>
+        <button id="toggle-contrast" class="accessibility-btn contrast-btn" aria-pressed="false">
+          <i class="fas fa-circle"></i><span>Alto Contraste</span>
+        </button>
+      </section>
+
+      <!-- Seção: Modo de Visão -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-eye"></i>
+          Modo de Visão
+        </h3>
+        <div class="vision-buttons">
+          <button id="colorblind-mode" class="accessibility-btn vision-btn" aria-pressed="false">
+            <i class="fas fa-eye"></i><span>Visão Normal</span>
+          </button>
+          <button id="reduced-motion" class="accessibility-btn vision-btn" aria-pressed="false">
+            <i class="fas fa-running"></i><span>Reduzir Animações</span>
+          </button>
+        </div>
+        <div class="vision-info" style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-light);">
+          <small>Clique para alternar entre modos: Normal → Deuteranopia → Protanopia → Tritanopia
+            →
+            Acromatopsia</small>
+        </div>
+      </section>
+
+      <!-- Seção: Leitura -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-book-reader"></i>
+          Leitura
+        </h3>
+        <button id="highlight-links" class="accessibility-btn" aria-pressed="false">
+          <i class="fas fa-link"></i><span>Destacar Links</span>
+        </button>
+      </section>
+
+      <!-- Seção: Navegação -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-mouse-pointer"></i>
+          Navegação
+        </h3>
+        <button id="focus-helper" class="accessibility-btn" aria-pressed="false">
+          <i class="fas fa-crosshairs"></i><span>Foco Aumentado</span>
+        </button>
+      </section>
+
+      <!-- Seção: Ajuda -->
+      <section class="accessibility-section">
+        <h3 class="section-title">
+          <i class="fas fa-life-ring"></i>
+          Ajuda
+        </h3>
+        <button id="keyboard-shortcuts" class="accessibility-btn">
+          <i class="fas fa-keyboard"></i><span>Atalhos</span>
+        </button>
+        <button id="reset-all" class="accessibility-btn reset-all-btn">
+          <i class="fas fa-redo"></i><span>Restaurar Padrões</span>
+        </button>
+      </section>
+    </div>
+
+    <div class="panel-footer">
+      <div class="status-indicator">
+        <i class="fas fa-check-circle"></i>
+        <span id="status-message">Configurações aplicadas</span>
+      </div>
+      <div class="panel-info">
+        <small>Configurações salvas automaticamente</small>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overlay do Painel -->
+  <div id="panel-overlay" class="panel-overlay" aria-hidden="true"></div>
+
+  <!-- Modal de Atalhos -->
+  <div id="shortcuts-modal" class="accessibility-modal" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Atalhos de Teclado</h3>
+        <button id="close-shortcuts" class="close-modal" aria-label="Fechar">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="shortcuts-list">
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>A</kbd> <span>Abrir/Fechar
+              painel</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>+</kbd> <span>Aumentar fonte</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>-</kbd> <span>Diminuir fonte</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>C</kbd> <span>Alto contraste</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>D</kbd> <span>Modo daltônico</span>
+          </div>
+          <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>R</kbd> <span>Reduzir animações</span>
+          </div>
+          <div class="shortcut-item"><kbd>Tab</kbd> <span>Navegar entre elementos</span></div>
+          <div class="shortcut-item"><kbd>Esc</kbd> <span>Fechar painéis</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
