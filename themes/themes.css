@@ -1,0 +1,66 @@
+:root {
+  /* Cores principais da marca (paleta 2026: vinho, roxo, rosa, dourado) */
+  --primary: #d91483;          /* rosa — botões, links, destaques */
+  --primary-dark: #6f164f;     /* vinho — hover, títulos de destaque, fundos escuros */
+  --secondary: #e86bb4;        /* rosa claro — tons de apoio */
+  --accent: #f1b72b;           /* dourado — selos e detalhes */
+  --highlight: #4c198a;        /* roxo — usado nos degradês com o rosa */
+
+  /* Cores de superfície e texto */
+  --text-dark: #24152b;        /* tinta — títulos e texto principal */
+  --text-light: #5f5066;
+  --text-muted: #8c7d91;
+  --bg: #FFFFFF;
+  --bg-soft: #fff9fc;          /* creme rosado */
+  --bg-card: #FFFFFF;
+  --border: #eadde7;           /* linha */
+  --shadow-sm: 0 2px 8px rgba(36, 21, 43, 0.05);
+  --shadow-md: 0 6px 24px rgba(36, 21, 43, 0.09);
+  --shadow-lg: 0 16px 48px rgba(36, 21, 43, 0.14);
+
+  /* Tipografia */
+  --font-display: 'Poppins', 'Quicksand', sans-serif;
+  --font-body: 'Inter', 'Roboto', sans-serif;
+
+  /* Espaçamento (8px grid) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+
+  /* Bordas */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+
+  /* Transições */
+  --transition: 0.3s ease;
+  --transition-fast: 0.15s ease;
+
+  /* Largura máxima */
+  --max-width: 1200px;
+}
+
+[data-theme="dark"] {
+  --primary: #f0479f;          /* rosa um pouco mais claro, para contrastar no escuro */
+  --primary-dark: #b0307a;
+  --secondary: #f08cc6;
+  --accent: #f1b72b;
+  --highlight: #8b5ad1;        /* roxo mais claro para os degradês */
+
+  --text-dark: #f7eef5;
+  --text-light: #d2c2d4;
+  --text-muted: #a291a6;
+  --bg: #170e1c;               /* tinta bem escura */
+  --bg-soft: #211427;
+  --bg-card: #26182e;
+  --border: #3d2a47;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 6px 24px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
