@@ -1,0 +1,1054 @@
+/* ===== SEÇÃO "HERO" (seletor de serviços) ===== */
+.hero-split {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  min-height: 100svh;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 0; /* zera o padding genérico de `section` que criava faixas
+                 brancas acima/abaixo e entre os painéis da hero */
+}
+
+.hero-panel {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
+  isolation: isolate;
+  min-height: 220px;
+}
+
+/* Mobile: `.hero-linha-topo` não deve interferir no empilhamento vertical
+   dos 3 painéis — torna-se "transparente" ao layout flex do pai */
+.hero-linha-topo {
+  display: contents;
+}
+
+/* Mobile: os 3 painéis empilhados, cada um com a largura toda,
+   separados por uma linha preta sutil */
+.hero-panel:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+
+.hero-panel-bg {
+  position: absolute;
+  inset: -20px; /* margem extra para o blur não deixar bordas transparentes */
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+  transform: scale(1.08);
+  transition: transform 0.6s ease, filter 0.4s ease;
+  z-index: 0;
+}
+
+/* Fundo sólido (gradiente) enquanto nenhuma imagem de serviço é definida.
+   Basta trocar/inserir a background-image no elemento .hero-panel-bg
+   correspondente (via style inline ou classe) para substituir por foto. */
+.hero-panel--personalizados .hero-panel-bg {
+  background-image: linear-gradient(135deg, var(--primary) 0%, var(--highlight) 100%);
+}
+
+.hero-panel--roupas .hero-panel-bg {
+  background-image: linear-gradient(135deg, var(--highlight) 0%, var(--primary-dark) 100%);
+}
+
+.hero-panel--brindes .hero-panel-bg {
+  background-image: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+}
+
+.hero-panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.hero-panel:hover .hero-panel-bg,
+.hero-panel:focus-visible .hero-panel-bg {
+  transform: scale(1.14);
+  filter: blur(2px);
+}
+
+.hero-panel:hover .hero-panel-overlay,
+.hero-panel:focus-visible .hero-panel-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+.hero-panel-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-1);
+  padding: var(--space-4) var(--space-3);
+  max-width: 360px;
+}
+
+.hero-panel-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  color: #fff;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero-panel-sub {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0 0 var(--space-1);
+}
+
+.hero-panel-btn {
+  pointer-events: none; /* o link inteiro do card já é clicável */
+  margin-top: var(--space-1);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+/* Hover: inverte as cores do botão (fundo rosa vira branco, texto branco
+   vira rosa) quando o usuário passa o cursor sobre o painel do serviço */
+.hero-panel:hover .hero-panel-btn,
+.hero-panel:focus-visible .hero-panel-btn {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid #fff;
+}
+
+/* Layout de referência: Personalizados e Roupas lado a lado (com corte
+   diagonal) ocupando o topo, e Brindes Corporativos em uma faixa embaixo.
+   Usamos duas linhas reais de flex (column) em vez de depender de
+   `height` percentual com `flex-wrap`, que deixava uma sobra em branco
+   entre as duas "linhas" do wrap. */
+@media (min-width: 1024px) {
+  .hero-split {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* `height` explícito (não apenas `min-height`) é necessário aqui:
+       os filhos usam `flex-basis` em porcentagem (60%/40%) para dividir
+       a altura entre as duas linhas do hero, e isso só é calculado de
+       forma confiável quando o container tem uma altura DEFINIDA — um
+       `min-height` sozinho deixava o flex-basis percentual desses
+       filhos "encolher" para o tamanho do conteúdo em vez da fração
+       real da tela, sobrando um vão vazio abaixo do hero.
+       Descontamos a altura do `.header-spacer` (72px, ver index.css)
+       porque ele soma sua altura ANTES da hero no fluxo do documento:
+       sem esse desconto, `spacer + hero(100vh)` ficava 72px mais alto
+       que a tela, e essa sobra cortava o final do painel de baixo
+       (o botão "Ver Brindes" ficava fora da área visível). */
+    height: calc(100svh - 72px);
+    height: calc(100vh - 72px);
+    min-height: calc(100svh - 72px);
+    min-height: calc(100vh - 72px);
+  }
+
+  .hero-panel {
+    min-height: 0;
+    border: none !important;
+  }
+
+  .hero-linha-topo {
+    display: flex;
+    /* 60% (era 68%): o painel de baixo (Brindes, com título em duas
+       linhas) precisava de mais espaço vertical para não cortar o
+       botão "Ver Brindes" — ver .hero-panel--brindes abaixo. */
+    flex: 0 0 60%;
+    height: 60%;
+  }
+
+  .hero-panel--personalizados,
+  .hero-panel--roupas {
+    flex: 1 1 50%;
+  }
+
+  .hero-panel--brindes {
+    /* 40% (era 32%): dá espaço de sobra para título de 2 linhas +
+       subtítulo + botão, que antes vazavam para fora do painel. */
+    flex: 0 0 40%;
+    height: 40%;
+  }
+
+  /* Telas desktop baixas (ex.: notebooks 1366x768): reduz o respiro
+     vertical do conteúdo para garantir que título + subtítulo + botão
+     sempre caibam dentro da altura reservada a cada painel. */
+  @media (max-height: 800px) {
+    .hero-panel-content {
+      padding-top: var(--space-2);
+      padding-bottom: var(--space-2);
+      gap: 0.5rem;
+    }
+    .hero-panel-sub {
+      margin-bottom: 0;
+    }
+  }
+
+  /* Corte diagonal entre o 1º e o 2º painel.
+     Os dois painéis têm a MESMA largura (50%). Usando o mesmo percentual
+     D = 18% nos dois lados: o painel 1 corta sua base em (100% - D) da
+     PRÓPRIA largura; o painel 2 é deslocado -D% (da própria largura,
+     igual à do painel 1) e corta seu topo/base em D% a partir da nova
+     posição. Como as larguras são iguais, D% de um equivale a D% do
+     outro, e as duas bordas caem exatamente no mesmo ponto — sem folga. */
+  .hero-panel--personalizados {
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-panel--roupas {
+    clip-path: polygon(18% 0, 100% 0, 100% 100%, 0 100%);
+    margin-left: -18%;
+  }
+
+  .hero-panel--personalizados .hero-panel-content { padding-right: 8%; }
+  .hero-panel--roupas .hero-panel-content { padding-left: 10%; }
+
+  /* Linha sutil e preta acompanhando o corte diagonal entre os painéis */
+  .hero-panel--personalizados::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  /* Linha divisória horizontal, sutil e preta, acima do painel de brindes */
+  .hero-panel--brindes {
+    border-top: 1px solid rgba(0, 0, 0, 0.35);
+  }
+}
+
+/* ===== SEÇÃO DE "DIFERENCIAIS" ===== */
+.section-diferenciais {
+  background: var(--bg);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .diferenciais-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.diferencial-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  transition: transform var(--transition);
+}
+
+.diferencial-card:hover {
+  transform: translateY(-2px);
+}
+
+.diferencial-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.diferencial-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.diferencial-card p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ===== SEÇÃO DE "NOVIDADES" ===== */
+.section-novidades {
+  background: var(--bg);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== SEÇÃO DE "VARIEDADES" ===== */
+.section-variedades {
+  background: var(--bg);
+  padding: var(--space-6) 0;
+}
+
+.variedades-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .variedades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .variedades-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.variedade-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.variedade-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(217, 20, 131, 0.08), transparent);
+  transition: left 0.6s ease;
+}
+
+.variedade-card:hover::before {
+  left: 100%;
+}
+
+.variedade-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.variedade-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, rgba(217, 20, 131, 0.15), rgba(76, 25, 138, 0.15));
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.variedade-card:hover .variedade-icon {
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.variedade-content {
+  flex: 1;
+}
+
+.variedade-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-family: var(--font-display);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.variedade-card:hover .variedade-title {
+  color: var(--primary);
+}
+
+.variedade-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+.variedade-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  transition: gap 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.variedade-card:hover .variedade-link {
+  gap: 12px;
+}
+
+.variedade-link i {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.variedade-card:hover .variedade-link i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .variedade-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .variedade-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 2rem;
+  }
+  .variedade-link {
+    justify-content: center;
+  }
+}
+
+/* ===== SEÇÃO DE "PROCESSO DE PERSONALIZAÇÃO" ===== */
+.section-processo {
+  background: var(--bg-soft);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-processo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle at 10% 20%, rgba(217, 20, 131, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-processo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(76, 25, 138, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.processo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .processo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .processo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+.processo-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-4) var(--space-3);
+  text-align: center;
+  border: 2px solid var(--border);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: default;
+}
+
+.processo-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.processo-number {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-display);
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.3;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.processo-card:hover .processo-number {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.processo-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-2);
+  background: linear-gradient(135deg, rgba(217, 20, 131, 0.1), rgba(76, 25, 138, 0.1));
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.processo-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.processo-card:hover .processo-icon::before {
+  opacity: 1;
+}
+
+.processo-icon i {
+  font-size: 2.2rem;
+  color: var(--primary);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.processo-card:hover .processo-icon i {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.processo-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-1);
+  transition: color 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.processo-card:hover h3 {
+  color: var(--primary);
+}
+
+.processo-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  margin: 0;
+}
+
+.processo-card:hover p {
+  color: var(--text-light);
+}
+
+/* Linha de conexão entre os cards (desktop) */
+@media (min-width: 1024px) {
+  .processo-grid {
+    position: relative;
+  }
+  .processo-grid::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      var(--primary) 10%,
+      var(--highlight) 50%,
+      var(--primary) 90%,
+      transparent 100%);
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.3;
+  }
+  .processo-card {
+    background: var(--bg-card);
+    z-index: 1;
+  }
+}
+
+@media (max-width: 639px) {
+  .processo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .processo-icon {
+    width: 70px;
+    height: 70px;
+  }
+  .processo-icon i {
+    font-size: 1.8rem;
+  }
+  .processo-number {
+    font-size: 1.8rem;
+    top: var(--space-1);
+    right: var(--space-1);
+  }
+}
+
+.processo-card.reveal {
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.processo-card.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.processo-card:nth-child(1).reveal { transition-delay: 0.05s; }
+.processo-card:nth-child(2).reveal { transition-delay: 0.1s; }
+.processo-card:nth-child(3).reveal { transition-delay: 0.15s; }
+.processo-card:nth-child(4).reveal { transition-delay: 0.2s; }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .processo-card:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    bottom: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: bold;
+    opacity: 0.5;
+  }
+  .processo-card:last-child::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .processo-card {
+    padding: var(--space-3) var(--space-2);
+  }
+  .processo-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .processo-icon i {
+    font-size: 1.5rem;
+  }
+  .processo-number {
+    font-size: 1.5rem;
+  }
+  .processo-card h3 {
+    font-size: 1rem;
+  }
+  .processo-card p {
+    font-size: 0.75rem;
+  }
+}
+
+[data-theme="dark"] .processo-card {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+[data-theme="dark"] .processo-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 8px 32px rgba(217, 20, 131, 0.15);
+}
+
+[data-theme="dark"] .processo-icon {
+  background: linear-gradient(135deg, rgba(217, 20, 131, 0.15), rgba(76, 25, 138, 0.15));
+}
+
+[data-theme="dark"] .processo-grid::before {
+  background: linear-gradient(90deg, 
+    transparent 0%,
+    var(--primary) 10%,
+    var(--highlight) 50%,
+    var(--primary) 90%,
+    transparent 100%);
+  opacity: 0.2;
+}
+
+/* ===== SEÇÃO DE "FAQ" ===== */
+.section-faq {
+  background: var(--bg-soft);
+}
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.faq-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: background var(--transition);
+  border-radius: var(--radius-md);
+}
+
+.faq-question:hover {
+  background: var(--bg-soft);
+}
+
+.faq-question[aria-expanded="true"] {
+  color: var(--primary);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.faq-icon {
+  flex-shrink: 0;
+  font-size: 1.2rem;
+  transition: transform var(--transition);
+  color: var(--primary);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 var(--space-3);
+}
+
+.faq-answer.open {
+  max-height: 300px;
+  padding: 0 var(--space-3) var(--space-3);
+}
+
+.faq-answer p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+/* ===== RESPIRO ENTRE AS SEÇÕES DA HOME =====
+   Escopado em body[data-pagina="home"] porque este arquivo também é
+   carregado pelas páginas de serviço. */
+body[data-pagina="home"] main > section:not(.hero-split) {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  body[data-pagina="home"] main > section:not(.hero-split):not(.section-cat-circ):not(.section-diferenciais) {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-pagina="home"] main > section:not(.hero-split) {
+    padding-top: var(--space-5);
+    padding-bottom: var(--space-5);
+  }
+}
+
+/* ===== VITRINES DOS SERVIÇOS (Home) =====
+   Texto centralizado em cima e mosaico de fotos clicáveis embaixo:
+   1 foto grande + 4 menores no computador; carrossel de arrastar no
+   celular. Cada foto leva para a página já filtrada. */
+.vitrine {
+  margin: 0;
+}
+
+.vitrine-cabecalho {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-4);
+}
+
+.vitrine-cabecalho h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+  line-height: 1.15;
+  color: var(--text-dark);
+  margin: 0 0 12px;
+}
+
+.vitrine-cabecalho p {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.vitrine-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  grid-template-rows: repeat(2, minmax(200px, 260px));
+  gap: 16px;
+}
+
+.vitrine-item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--bg-soft);
+  box-shadow: var(--shadow-sm);
+  isolation: isolate;
+  outline-offset: 3px;
+}
+
+.vitrine-item--destaque {
+  grid-row: 1 / span 2;
+}
+
+.vitrine-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* Produtos fotografados em fundo branco: aparecem inteiros */
+.vitrine-item--produto {
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.vitrine-item--produto img {
+  object-fit: contain;
+  padding: 6% 6% 16%;
+}
+
+.vitrine-item:hover img,
+.vitrine-item:focus-visible img {
+  transform: scale(1.05);
+}
+
+.vitrine-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(36, 21, 43, 0.28) 100%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.vitrine-item:not(.vitrine-item--produto)::after { opacity: 1; }
+
+.vitrine-rotulo {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 28px);
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: #fff;
+  color: #24152b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  box-shadow: 0 6px 16px rgba(36, 21, 43, 0.14);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.vitrine-rotulo::after {
+  content: "\f061";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.7rem;
+  opacity: 0;
+  margin-left: -6px;
+  transition: opacity var(--transition-fast), margin var(--transition-fast);
+}
+
+.vitrine-item:hover .vitrine-rotulo,
+.vitrine-item:focus-visible .vitrine-rotulo {
+  background: var(--primary);
+  color: #fff;
+}
+
+.vitrine-item:hover .vitrine-rotulo::after,
+.vitrine-item:focus-visible .vitrine-rotulo::after {
+  opacity: 1;
+  margin-left: 0;
+}
+
+/* Tablet: mosaico mais baixo */
+@media (max-width: 1023px) {
+  .vitrine-grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+    grid-template-rows: repeat(2, 190px);
+    gap: 12px;
+  }
+}
+
+/* Celular: carrossel de arrastar (com uma fatia da próxima foto) */
+@media (max-width: 767px) {
+  .vitrine-cabecalho { margin-bottom: var(--space-3); }
+
+  .vitrine-grid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* sangra até a borda da tela: o container tem 8px de recuo no celular */
+    margin: 0 -8px;
+    padding: 4px 8px 12px;
+    scroll-padding-left: 8px;
+  }
+
+  .vitrine-grid::-webkit-scrollbar { display: none; }
+
+  .vitrine-item {
+    flex: 0 0 72%;
+    aspect-ratio: 4 / 5;
+    scroll-snap-align: start;
+    border-radius: 18px;
+  }
+
+  .vitrine-item--destaque {
+    flex-basis: 82%;
+    grid-row: auto;
+  }
+}
+
+
+/* ===== SEÇÕES DE SERVIÇO (Home): vitrine + "Nossas novidades" =====
+   Cada serviço é uma seção própria. Fundo alternado (branco / creme)
+   para separar Personalizados, Lunna Mood e Brindes. */
+.secao-servico--mood { background: var(--bg-soft); }
+
+.vitrine-cabecalho .section-badge { margin-bottom: 12px; }
+
+/* Transição da vitrine para o carrossel */
+.novidades-cabecalho {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin: var(--space-6) auto var(--space-3);
+  position: relative;
+}
+
+.novidades-cabecalho::before {
+  content: "";
+  width: 64px;
+  height: 1px;
+  margin-bottom: var(--space-2);
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.novidades-cabecalho .section-badge { margin: 0; }
+
+.novidades-cabecalho h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.secao-servico .carousel-ver-mais { margin-bottom: 0; }
+
+@media (max-width: 767px) {
+  .novidades-cabecalho { margin-top: var(--space-5); }
+}

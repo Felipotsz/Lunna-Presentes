@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Presentes personalizados da Lunna — canecas, quadros e lembranças únicas, criadas com carinho para cada momento especial." />
+  <meta name="keywords" content="presentes personalizados, canecas personalizadas, quadros personalizados, lembrancinhas" />
+  <meta name="author" content="Lunna Presentes" />
+  <title>Personalizados | Lunna Presentes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="../../themes/themes.css">
+  <link rel="stylesheet" href="../../pages/home/home.css" />
+  <link rel="stylesheet" href="personalizados.css" />
+
+  <link rel="stylesheet" href="../../components/categorias-carrossel/categorias-carrossel.css" />
+  <link rel="stylesheet" href="../../components/catalogo/catalogo.css" />
+  <link rel="stylesheet" href="../../components/cta-estampa/cta-estampa.css" />
+
+  <link rel="stylesheet" href="../../components/page-hero/page-hero.css" />
+  <!-- JavaScript -->
+  <script src="../../data/produtos.data.js" defer></script>
+  <script src="../../data/servicos.data.js" defer></script>
+  <script src="../../themes/themes.js"></script>
+  <script src="../../data/configs.data.js" defer></script>
+  <script src="../../index.js" defer></script>
+  <script src="../../pages/home/carousel-shared.js" defer></script>
+  <script src="servico-pagina.js" defer></script>
+  <script src="../../components/catalogo/catalogo.js" defer></script>
+
+  <script src="../../components/categorias-carrossel/categorias-carrossel.js" defer></script>
+  <script src="../../components/cta-estampa/cta-estampa.js" defer></script>
+
+  <!-- Sistema de Acessibilidade -->
+  <script src="../../accessibility/accessibility.js" defer></script>
+  <link rel="stylesheet" href="../../accessibility/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/icons/favicon.png" />
+</head>
+
+<body data-servico="personalizados">
+
+  <!-- HEADER + MENU MOBILE (HTML fixo) -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <a href="../../index.html" class="header-logo" aria-label="Lunna Presentes — página inicial">
+          <div class="logo-icon" aria-hidden="true">
+            <img src="../../assets/images/logo_lunna_presentes.jpeg" alt="Lunna Presentes Logo" class="logo-img" />
+          </div>
+          <div class="logo-text">
+            Lunna Presentes
+            <span>Personalizados com carinho</span>
+          </div>
+        </a>
+
+        <nav class="header-nav" role="navigation" aria-label="Menu principal">
+          <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../../pages/about/about.html"><i class="fas fa-heart"></i> Sobre</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-trigger active" aria-expanded="false" aria-haspopup="true">
+              <i class="fas fa-store"></i> Produtos <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="../../pages/personalizados/personalizados.html" class="active" role="menuitem"><i class="fas fa-palette"></i> Personalizados</a>
+              <a href="../../pages/roupas/roupas.html" role="menuitem"><i class="fas fa-shirt"></i> Lunna Mood</a>
+              <a href="../../pages/brindes-corporativos/brindes-corporativos.html" role="menuitem"><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+            </div>
+          </div>
+          <a href="../../pages/provador/provador.html"><i class="fas fa-wand-magic-sparkles"></i> Provador</a>
+          <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" aria-label="Ativar modo escuro">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="header-whatsapp" class="btn btn-whatsapp header-cta" target="_blank" rel="noopener"
+            aria-label="Solicitar orçamento pelo WhatsApp">
+            <i class="fab fa-whatsapp"></i> Falar Conosco
+          </a>
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+      <a href="../../index.html" data-nav><i class="fas fa-home"></i> Home</a>
+      <a href="../../pages/about/about.html" data-nav><i class="fas fa-heart"></i> Sobre</a>
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-trigger" aria-expanded="false" aria-controls="mobile-produtos-submenu">
+          <i class="fas fa-store"></i> Produtos <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="mobile-nav-submenu" id="mobile-produtos-submenu">
+          <a href="../../pages/personalizados/personalizados.html" class="active" data-nav><i class="fas fa-palette"></i> Personalizados</a>
+          <a href="../../pages/roupas/roupas.html" data-nav><i class="fas fa-shirt"></i> Lunna Mood</a>
+          <a href="../../pages/brindes-corporativos/brindes-corporativos.html" data-nav><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+        </div>
+      </div>
+      <a href="../../pages/provador/provador.html" data-nav><i class="fas fa-wand-magic-sparkles"></i> Provador de estampas</a>
+      <a href="../../pages/contact/contact.html" data-nav><i class="fas fa-envelope"></i> Contato</a>
+      <div class="mobile-cta">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </a>
+      </div>
+    </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- TOPO DA PÁGINA (components/page-hero) -->
+    <section class="page-hero" aria-labelledby="page-hero-title">
+      <div class="container page-hero-grid">
+        <div class="page-hero-texto">
+          <span class="page-hero-eyebrow"><i class="fas fa-gift"></i> Presentes que contam histórias</span>
+          <h1 id="page-hero-title">Transforme uma ideia em algo <em>só seu.</em></h1>
+          <p>Canecas, agendas, chaveiros, relógios e muito mais, pensados para celebrar pessoas, momentos e histórias. Escolha um produto ou conte a sua ideia para a gente.</p>
+          <div class="page-hero-acoes">
+            <a href="#" class="btn btn-hero-principal" data-wa-hero="Olá! Quero personalizar um presente e gostaria de ajuda com a ideia."><i class="fas fa-wand-magic-sparkles"></i> Quero personalizar</a>
+            <a href="#catalogo" class="btn btn-hero-secundario">Conhecer catálogo completo</a>
+          </div>
+          <ul class="page-hero-selos">
+            <li><i class="fas fa-palette"></i> Arte criada para você</li>
+            <li><i class="fas fa-eye"></i> Prévia antes de produzir</li>
+          </ul>
+        </div>
+        <div class="page-hero-visual">
+          <div class="page-hero-moldura page-hero-moldura--logo">
+            <img src="../../assets/images/logo_lunna_presentes.jpeg" alt="Logo Lunna Presentes" />
+          </div>
+          <div class="page-hero-selo">
+            <strong>Personalização exclusiva</strong>
+            <span>do seu jeito, para cada ocasião.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARROSSEL DE TIPOS DE PRODUTO (components/categorias-carrossel) -->
+    <section class="section-cat-circ" data-categorias-carrossel data-base="../../" aria-label="Tipos de produto"></section>
+
+    <!-- SEÇÃO DE "NOVIDADES" -->
+    <section class="section-novidades" aria-labelledby="novidades-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-sparkle"></i> Lançamentos</span>
+          <h2 class="section-title" id="novidades-title">Novidades que vão encantar você</h2>
+          <p class="section-subtitle">Produtos exclusivos que acabaram de chegar</p>
+        </div>
+
+        <div class="carousel-wrapper" role="region" aria-label="Carrossel de novidades">
+          <button class="carousel-btn carousel-prev" id="servico-novidades-prev" aria-label="Produto anterior">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track" id="servico-novidades-track" role="list"></div>
+          </div>
+          <button class="carousel-btn carousel-next" id="servico-novidades-next" aria-label="Próximo produto">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="servico-novidades-dots" role="tablist" aria-label="Indicadores do carrossel"></div>
+        <div class="carousel-ver-mais">
+          <a href="#catalogo" class="btn btn-outline">Ver mais produtos <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "DESTAQUE" -->
+    <section class="products-controls" id="catalogo" aria-label="Busca e filtros de produtos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-store"></i> Nossa Loja</span>
+          <h2 class="section-title">Produtos em Destaque</h2>
+          <p class="section-subtitle">Os preferidos dos nossos clientes</p>
+        </div>
+
+        <div class="controls-inner">
+          <!-- Busca -->
+          <div class="search-wrapper">
+            <label for="product-search" class="sr-only">Buscar produtos</label>
+            <span class="search-icon" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></span>
+            <input type="search" id="product-search" class="search-input" placeholder="Buscar por nome ou descrição..."
+              autocomplete="off" aria-label="Buscar produtos" />
+            <button class="search-clear" id="search-clear" aria-label="Limpar busca" hidden><i class="fas fa-times"></i></button>
+          </div>
+
+          <!-- Filtros de categoria (dentro do serviço Personalizados) -->
+          <div class="filters-row" role="group" aria-label="Filtrar por categoria">
+            <button class="filter-pill active" data-category="all" aria-pressed="true">
+              Todos
+              <span class="filter-count" id="count-all">0</span>
+            </button>
+            <button class="filter-pill" data-category="personalizados" aria-pressed="false">
+              <i class="fas fa-pen-fancy"></i> Personalizados
+              <span class="filter-count" id="count-personalizados">0</span>
+            </button>
+            <button class="filter-pill" data-category="canecas" aria-pressed="false">
+              <i class="fas fa-mug-hot"></i> Canecas
+              <span class="filter-count" id="count-canecas">0</span>
+            </button>
+            <button class="filter-pill" data-category="agendas" aria-pressed="false">
+              <i class="fas fa-book"></i> Agendas e Cadernos
+              <span class="filter-count" id="count-agendas">0</span>
+            </button>
+            <button class="filter-pill" data-category="bodys" aria-pressed="false">
+              <i class="fas fa-baby"></i> Bodys
+              <span class="filter-count" id="count-bodys">0</span>
+            </button>
+            <button class="filter-pill" data-category="bolsas" aria-pressed="false">
+              <i class="fas fa-suitcase"></i> Bolsas e Necessáires
+              <span class="filter-count" id="count-bolsas">0</span>
+            </button>
+            <button class="filter-pill" data-category="chaveiros" aria-pressed="false">
+              <i class="fas fa-key"></i> Chaveiros
+              <span class="filter-count" id="count-chaveiros">0</span>
+            </button>
+            <button class="filter-pill" data-category="imas" aria-pressed="false">
+              <i class="fas fa-thumbtack"></i> Ímãs e Plaquinhas
+              <span class="filter-count" id="count-imas">0</span>
+            </button>
+            <button class="filter-pill" data-category="mousepads" aria-pressed="false">
+              <i class="fas fa-computer-mouse"></i> MousePad
+              <span class="filter-count" id="count-mousepads">0</span>
+            </button>
+            <button class="filter-pill" data-category="relogios" aria-pressed="false">
+              <i class="fas fa-clock"></i> Relógios
+              <span class="filter-count" id="count-relogios">0</span>
+            </button>
+            <button class="filter-pill" data-category="tapetes" aria-pressed="false">
+              <i class="fas fa-rug"></i> Tapetes
+              <span class="filter-count" id="count-tapetes">0</span>
+            </button>
+            <button class="filter-pill" data-category="trofeus" aria-pressed="false">
+              <i class="fas fa-trophy"></i> Troféus
+              <span class="filter-count" id="count-trofeus">0</span>
+            </button>
+          </div>
+
+          <!-- Status de resultados -->
+          <div class="results-status">
+            <span id="results-count" aria-live="polite" aria-atomic="true">
+              Carregando produtos...
+            </span>
+            <button class="clear-filters-btn" id="clear-filters" hidden>
+              <i class="fas fa-times"></i> Limpar filtros
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRID DE PRODUTOS -->
+    <section class="products-catalog" aria-labelledby="catalog-title">
+      <div class="container">
+        <h2 class="sr-only" id="catalog-title">Catálogo de personalizados</h2>
+
+        <!-- Estado de loading -->
+        <div class="products-loading" id="products-loading" aria-live="polite">
+          <div class="loading-grid">
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+            <div class="skeleton-card">
+              <div class="skeleton" style="aspect-ratio:4/3;border-radius:12px"></div>
+              <div style="padding:16px">
+                <div class="skeleton" style="height:16px;margin-bottom:8px;width:80%"></div>
+                <div class="skeleton" style="height:12px;width:60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid principal -->
+        <div class="products-grid-full" id="products-grid" aria-live="polite" aria-label="Lista de produtos" role="list"
+          hidden></div>
+
+        <!-- Empty state -->
+        <div class="products-empty" id="products-empty" hidden>
+          <div class="empty-icon" aria-hidden="true"><i class="fas fa-magnifying-glass"></i></div>
+          <h3>Nenhum produto encontrado</h3>
+          <p>Tente buscar com outros termos ou explore outras categorias.</p>
+          <button class="btn btn-primary" id="empty-reset">Ver todos os produtos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA "VEJA SUA FOTO ESTAMPADA" (components/cta-estampa) -->
+    <section class="section-cta-estampa" data-cta-estampa data-base="../../"></section>
+
+    <!-- SEÇÃO DE "VARIEDADES" (exclusiva de Personalizados) -->
+    <section class="section-variedades" aria-labelledby="variedades-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-th-large"></i> Variedades da Lunna</span>
+          <h2 class="section-title" id="variedades-title">Variedades de Presentes</h2>
+          <p class="section-subtitle">Produtos para todos os gostos e momentos especiais</p>
+        </div>
+
+        <div class="variedades-grid reveal">
+          <a href="personalizados.html?cat=aniversario" class="variedade-card"
+            aria-label="Presentes de Aniversário">
+            <div class="variedade-icon"><i class="fas fa-birthday-cake"></i></div>
+            <div class="variedade-content">
+              <h3 class="variedade-title">Aniversário</h3>
+              <p class="variedade-desc">Celebre com estilo! Canecas exclusivas e lembranças temáticas que tornam cada
+                ano especial.</p>
+              <span class="variedade-link">Ver produtos <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a href="personalizados.html?cat=namorados" class="variedade-card" aria-label="Dia dos Namorados">
+            <div class="variedade-icon"><i class="fas fa-heart"></i></div>
+            <div class="variedade-content">
+              <h3 class="variedade-title">Namorados</h3>
+              <p class="variedade-desc">Declare seu amor com presentes românticos e personalizados que aquecem o coração
+                e fortalecem a conexão.</p>
+              <span class="variedade-link">Ver produtos <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a href="personalizados.html?cat=amizade" class="variedade-card" aria-label="Presentes para Amizade">
+            <div class="variedade-icon"><i class="fas fa-user-friends"></i></div>
+            <div class="variedade-content">
+              <h3 class="variedade-title">Amizade</h3>
+              <p class="variedade-desc">Surpreenda seus amigos com lembranças únicas que celebram uma amizade verdadeira
+                e especial.</p>
+              <span class="variedade-link">Ver produtos <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a href="personalizados.html?cat=datas" class="variedade-card" aria-label="Datas Especiais">
+            <div class="variedade-icon"><i class="fas fa-star-of-life"></i></div>
+            <div class="variedade-content">
+              <h3 class="variedade-title">Datas Especiais</h3>
+              <p class="variedade-desc">Natal, Páscoa, Dia das Mães... Celebre cada data com presentes que criam
+                memórias inesquecíveis.</p>
+              <span class="variedade-link">Ver produtos <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+
+          <a href="personalizados.html?cat=infantil" class="variedade-card" aria-label="Presentes Infantis">
+            <div class="variedade-icon"><i class="fas fa-child"></i></div>
+            <div class="variedade-content">
+              <h3 class="variedade-title">Infantil</h3>
+              <p class="variedade-desc">Encante as crianças com acessórios personalizados com seus personagens
+                favoritos.</p>
+              <span class="variedade-link">Ver produtos <i class="fas fa-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "PROCESSO DE PERSONALIZAÇÃO" (exclusiva de Personalizados) -->
+    <section class="section-processo" aria-labelledby="processo-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-magic"></i> Como Funciona</span>
+          <h2 class="section-title" id="processo-title">Personalização em 4 Passos</h2>
+          <p class="section-subtitle">Simples, rápido e feito com muito carinho</p>
+        </div>
+
+        <div class="processo-grid">
+          <div class="processo-card reveal">
+            <div class="processo-number">01</div>
+            <div class="processo-icon"><i class="fas fa-comment-dots"></i></div>
+            <h3>Fale Conosco</h3>
+            <p>Entre em contato pelo WhatsApp e conte o que deseja</p>
+          </div>
+          <div class="processo-card reveal">
+            <div class="processo-number">02</div>
+            <div class="processo-icon"><i class="fas fa-palette"></i></div>
+            <h3>Criação da Arte</h3>
+            <p>Nossa equipe cria um design exclusivo para você</p>
+          </div>
+          <div class="processo-card reveal">
+            <div class="processo-number">03</div>
+            <div class="processo-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Você Aprova</h3>
+            <p>Avalie a arte e peça ajustes se necessário</p>
+          </div>
+          <div class="processo-card reveal">
+            <div class="processo-number">04</div>
+            <div class="processo-icon"><i class="fas fa-box-open"></i></div>
+            <h3>Produção e Entrega</h3>
+            <p>Produzimos com qualidade e entregamos no prazo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SEÇÃO DE "FAQ" (específico de Personalizados) -->
+    <section class="section-faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-question-circle"></i> Tire suas dúvidas</span>
+          <h2 class="section-title" id="faq-title">Perguntas Frequentes sobre Personalizados</h2>
+          <p class="section-subtitle">Tudo o que você precisa saber antes de fazer seu pedido</p>
+        </div>
+
+        <div class="faq-list reveal" id="faq-list" role="list"></div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "CONTATO" (mesmo CTA da Home) -->
+    <section class="section-contato" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info reveal">
+            <span class="section-badge"><i class="fas fa-headset"></i> Atendimento</span>
+            <h2 id="contato-title">Estamos aqui para ajudar</h2>
+            <p>Tire suas dúvidas, faça um orçamento ou peça ajuda para montar o presente perfeito.</p>
+            <ul class="contato-list">
+              <li><i class="fas fa-check-circle"></i> Produção em até 3 dias úteis</li>
+              <li><i class="fas fa-gift"></i> Embalagem especial para presente</li>
+              <li><i class="fas fa-envelope"></i> Cartão mensagem incluído</li>
+              <li><i class="fas fa-shield-alt"></i> Garantia de qualidade</li>
+            </ul>
+            <div class="contato-actions">
+              <a href="#" id="contato-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener"
+                aria-label="Falar pelo WhatsApp">
+                <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+              </a>
+              <a href="#" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Enviar e-mail
+              </a>
+            </div>
+          </div>
+          <div class="contato-card reveal">
+            <div class="contato-destaques">
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                <div>
+                  <strong>Localização</strong>
+                  <p>São Paulo, SP — Atendemos online e presencial</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                <div>
+                  <strong>Horário</strong>
+                  <p>Segunda a Sábado, das 9h às 18h</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-credit-card"></i></span>
+                <div>
+                  <strong>Pagamento</strong>
+                  <p>PIX, cartão de crédito e débito</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-truck"></i></span>
+                <div>
+                  <strong>Envios</strong>
+                  <p>Correios, Motoboy e retirada local</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATENDIMENTO VIA WHATSAPP (HTML fixo) -->
+      <section class="contact-banner" aria-labelledby="banner-title">
+    <div class="container">
+      <div class="banner-box reveal">
+        <div class="banner-icon" aria-hidden="true">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="banner-text">
+          <h2 id="banner-title">Atendimento via WhatsApp</h2>
+          <p>Resposta rápida, orçamento em minutos e acompanhamento personalizado.</p>
+          <ul class="banner-lista">
+            <li><i class="fas fa-bolt"></i> Resposta em até 5min</li>
+            <li><i class="fas fa-image"></i> Envio de fotos e artes</li>
+            <li><i class="fas fa-chart-line"></i> Acompanhamento do pedido</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="banner-whatsapp" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Falar Agora
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- RODAPÉ (HTML fixo) -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo-text" style="margin-bottom: 12px;">
+              <div class="footer-logo">
+                <img src="../../assets/images/logo_lunna_presentes.jpeg" alt="Lunna Presentes" class="logo-img" />
+              </div>
+              Lunna Presentes
+              <span>Personalizados com carinho</span>
+            </div>
+            <p>Transformamos momentos em memórias eternas com presentes únicos e cheios de significado.</p>
+            <div class="footer-social">
+              <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="footer-social-whatsapp" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Links Rápidos</h4>
+            <nav class="footer-links" aria-label="Links rápidos">
+              <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+              <a href="../../pages/about/about.html"><i class="fas fa-heart"></i> Sobre</a>
+              <a href="../../pages/provador/provador.html"><i class="fas fa-wand-magic-sparkles"></i> Provador de estampas</a>
+              <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+            </nav>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Nossos Serviços</h4>
+            <nav class="footer-links" aria-label="Nossos serviços">
+              <a href="../../pages/personalizados/personalizados.html"><i class="fas fa-palette"></i> Personalizados</a>
+              <a href="../../pages/roupas/roupas.html"><i class="fas fa-shirt"></i> Lunna Mood</a>
+              <a href="../../pages/brindes-corporativos/brindes-corporativos.html"><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-payment">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-pix"></i>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; <span id="currentYear">2026</span> Lunna Presentes. Feito com <i class="fas fa-heart"></i> para você.
+            </p>
+            <p>Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- ACESSIBILIDADE (HTML fixo) -->
+    <button id="accessibility-toggle" class="accessibility-toggle"
+      aria-label="Abrir painel de configurações de acessibilidade" aria-expanded="false"
+      aria-controls="accessibility-panel">
+      <i class="fas fa-universal-access" aria-hidden="true"></i>
+      <span class="sr-only">Acessibilidade</span>
+    </button>
+
+    <!-- Painel de Acessibilidade -->
+    <aside id="accessibility-panel" class="accessibility-panel" aria-label="Painel de Configurações de Acessibilidade"
+      aria-hidden="true" role="dialog">
+
+      <div class="panel-header">
+        <div class="panel-title">
+          <i class="fas fa-universal-access" aria-hidden="true"></i>
+          <h2>Acessibilidade</h2>
+        </div>
+        <button id="close-panel" class="close-panel" aria-label="Fechar painel">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="panel-content">
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-font" aria-hidden="true"></i>
+            Tamanho da Fonte
+          </h3>
+          <div class="font-controls">
+            <button id="decrease-font" class="accessibility-btn" aria-label="Diminuir fonte">
+              <i class="fas fa-minus"></i><span>A-</span>
+            </button>
+            <div class="font-display" id="current-font-size">100%</div>
+            <button id="increase-font" class="accessibility-btn" aria-label="Aumentar fonte">
+              <i class="fas fa-plus"></i><span>A+</span>
+            </button>
+            <button id="reset-font" class="accessibility-btn reset-btn">
+              <i class="fas fa-undo"></i><span>Padrão</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-adjust"></i>
+            Contraste
+          </h3>
+          <button id="toggle-contrast" class="accessibility-btn contrast-btn" aria-pressed="false">
+            <i class="fas fa-circle"></i><span>Alto Contraste</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-eye"></i>
+            Modo de Visão
+          </h3>
+          <div class="vision-buttons">
+            <button id="colorblind-mode" class="accessibility-btn vision-btn" aria-pressed="false">
+              <i class="fas fa-eye"></i><span>Visão Normal</span>
+            </button>
+            <button id="reduced-motion" class="accessibility-btn vision-btn" aria-pressed="false">
+              <i class="fas fa-running"></i><span>Reduzir Animações</span>
+            </button>
+          </div>
+          <div class="vision-info" style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-light);">
+            <small>Clique para alternar entre modos: Normal → Deuteranopia → Protanopia → Tritanopia →
+              Acromatopsia</small>
+          </div>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-book-reader"></i>
+            Leitura
+          </h3>
+          <button id="highlight-links" class="accessibility-btn" aria-pressed="false">
+            <i class="fas fa-link"></i><span>Destacar Links</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-mouse-pointer"></i>
+            Navegação
+          </h3>
+          <button id="focus-helper" class="accessibility-btn" aria-pressed="false">
+            <i class="fas fa-crosshairs"></i><span>Foco Aumentado</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-life-ring"></i>
+            Ajuda
+          </h3>
+          <button id="keyboard-shortcuts" class="accessibility-btn">
+            <i class="fas fa-keyboard"></i><span>Atalhos</span>
+          </button>
+          <button id="reset-all" class="accessibility-btn reset-all-btn">
+            <i class="fas fa-redo"></i><span>Restaurar Padrões</span>
+          </button>
+        </section>
+      </div>
+
+      <div class="panel-footer">
+        <div class="status-indicator">
+          <i class="fas fa-check-circle"></i>
+          <span id="status-message">Configurações aplicadas</span>
+        </div>
+        <div class="panel-info">
+          <small>Configurações salvas automaticamente</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay do Painel -->
+    <div id="panel-overlay" class="panel-overlay" aria-hidden="true"></div>
+
+    <!-- Modal de Atalhos -->
+    <div id="shortcuts-modal" class="accessibility-modal" aria-hidden="true" role="dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Atalhos de Teclado</h3>
+          <button id="close-shortcuts" class="close-modal" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="shortcuts-list">
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>A</kbd> <span>Abrir/Fechar painel</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>+</kbd> <span>Aumentar fonte</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>-</kbd> <span>Diminuir fonte</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>C</kbd> <span>Alto contraste</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>D</kbd> <span>Modo daltônico</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>R</kbd> <span>Reduzir animações</span></div>
+            <div class="shortcut-item"><kbd>Tab</kbd> <span>Navegar entre elementos</span></div>
+            <div class="shortcut-item"><kbd>Esc</kbd> <span>Fechar painéis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

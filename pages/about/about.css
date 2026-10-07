@@ -1,0 +1,466 @@
+/* ===== HISTÓRIA ===== */
+.about-historia {
+  background: var(--bg);
+  padding: var(--space-7) 0;
+}
+
+.historia-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .historia-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.historia-text .section-badge {
+  margin-bottom: var(--space-2);
+}
+
+.historia-text h2 {
+  margin-bottom: var(--space-3);
+}
+
+.historia-text p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: var(--space-2);
+}
+
+.historia-btns {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.historia-image {
+  position: relative;
+}
+
+.historia-img-wrapper {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: var(--shadow-lg);
+}
+
+.historia-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.historia-img-wrapper:hover img {
+  transform: scale(1.04);
+}
+
+.historia-badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.badge-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+/* ===== MVV ===== */
+.about-mvv {
+  background: var(--bg-soft);
+  padding: var(--space-7) 0;
+}
+
+.mvv-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 768px) {
+  .mvv-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+.mvv-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.mvv-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.mvv-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-3);
+  display: inline-block;
+  /* Antes usava um gradiente "recortado" no texto do ícone
+     (background-clip: text + color: transparent). Essa técnica é
+     pensada para texto normal — em cima de um ícone de fonte (Font
+     Awesome) o recorte pode falhar dependendo do navegador/fonte,
+     deixando o ícone com color:transparent e nenhuma cor visível de
+     verdade por trás, ou seja, invisível tanto no tema claro quanto no
+     escuro. Uma cor sólida é robusta nos dois temas. */
+  color: var(--primary);
+}
+
+/* Ícones da lista "Valores": antes usavam cores fixas via style inline
+   (var(--primary), var(--accent), #25D366, #FFD700, #4CAF50). Contra o
+   fundo branco do card no tema claro, o amarelo/dourado e o verde do
+   WhatsApp ficavam com contraste muito baixo (~1.4–2:1, abaixo do
+   mínimo de 3:1 recomendado para ícones) — praticamente ilegíveis. As
+   cores abaixo mantêm a identidade de cada ícone mas escurecidas o
+   suficiente para ficarem legíveis nos dois temas. */
+.mvv-value-icon {
+  margin-right: 8px;
+}
+
+.mvv-value-icon--rose {
+  color: #d94569;
+}
+
+.mvv-value-icon--amber {
+  color: #997300;
+}
+
+.mvv-value-icon--green {
+  color: #1da851;
+}
+
+.mvv-value-icon--gold {
+  color: #9c7f00;
+}
+
+.mvv-value-icon--teal {
+  color: #3d8b40;
+}
+
+[data-theme="dark"] .mvv-value-icon--rose {
+  color: #ff9bb3;
+}
+
+[data-theme="dark"] .mvv-value-icon--amber {
+  color: #ffd166;
+}
+
+[data-theme="dark"] .mvv-value-icon--green {
+  color: #4cd47d;
+}
+
+[data-theme="dark"] .mvv-value-icon--gold {
+  color: #ffd700;
+}
+
+[data-theme="dark"] .mvv-value-icon--teal {
+  color: #6fcf72;
+}
+
+.mvv-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-2);
+  position: relative;
+  display: inline-block;
+}
+
+.mvv-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--highlight));
+  border-radius: var(--radius-full);
+}
+
+.mvv-card p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+.mvv-values {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.mvv-values li {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition);
+}
+
+.mvv-values li:hover {
+  transform: translateX(5px);
+}
+
+/* ===== ANIMAÇÕES DE ENTRADA ===== */
+.about-historia .reveal,
+.about-mvv .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.about-historia .reveal.visible,
+.about-mvv .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay para cards */
+.mvv-card.reveal:nth-child(1) { transition-delay: 0.05s; }
+.mvv-card.reveal:nth-child(2) { transition-delay: 0.1s; }
+.mvv-card.reveal:nth-child(3) { transition-delay: 0.15s; }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 480px) {
+  .historia-badge {
+    bottom: -8px;
+    right: -8px;
+    padding: var(--space-1) var(--space-2);
+  }
+  
+  .badge-number {
+    font-size: 1.2rem;
+  }
+  
+  .badge-label {
+    font-size: 0.6rem;
+  }
+}
+/* ============================================================
+   IDENTIDADE VISUAL DA PÁGINA SOBRE — LUNNA PRESENTES
+   Baseada no perfil real @lunnapresente: rosa/magenta vibrante,
+   tipografia arredondada e alegre, corações e borboletas como
+   elementos decorativos. Escopado em body[data-pagina="sobre"]
+   para não vazar para o resto do site — mesmo princípio usado
+   na identidade da Lunna Mood (pages/roupas).
+   ============================================================ */
+
+/* A página Sobre agora usa a paleta global do site (themes.css),
+   que já é rosa/vinho como o perfil @lunnapresente. */
+
+/* ===== MODO NOTURNO — LUNNA PRESENTES (página Sobre) =====
+   Em vez do roxo-azulado genérico do dark mode padrão do site, um
+   fundo escuro neutro levemente aquecido, que harmoniza com o
+   magenta/rosa da marca em vez de competir com ele. */
+html[data-theme="dark"] body[data-pagina="sobre"] .site-header {
+  background: var(--bg);
+  border-bottom-color: var(--border);
+}
+
+html[data-theme="dark"] body[data-pagina="sobre"] .mobile-menu {
+  background: var(--bg);
+}
+
+html[data-theme="dark"] body[data-pagina="sobre"] .mvv-card,
+html[data-theme="dark"] body[data-pagina="sobre"] .produto-categoria-card,
+html[data-theme="dark"] body[data-pagina="sobre"] .historia-img-wrapper {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+/* Sobrescreve o fundo genérico roxo-azulado do dark mode global
+   (index.css) no card de contato, mantendo o tom da marca. */
+html[data-theme="dark"] body[data-pagina="sobre"] .contato-info {
+  background: rgba(38, 24, 46, 0.95);
+}
+
+html[data-theme="dark"] body[data-pagina="sobre"] .site-footer {
+  background: #120d10;
+}
+
+body[data-pagina="sobre"] .section-title,
+body[data-pagina="sobre"] #historia-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* ===== Botões e destaques na paleta magenta ===== */
+body[data-pagina="sobre"] .btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  box-shadow: 0 4px 14px rgba(194, 24, 91, 0.35);
+}
+
+body[data-pagina="sobre"] .btn-outline {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+body[data-pagina="sobre"] .btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+body[data-pagina="sobre"] .section-badge {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+body[data-pagina="sobre"] .mvv-icon {
+  /* Mesmo ajuste da regra base de .mvv-icon acima: cor sólida em vez do
+     gradiente recortado no texto, que podia deixar o ícone invisível. */
+  color: var(--primary);
+}
+
+body[data-pagina="sobre"] .header-nav a.active,
+body[data-pagina="sobre"] .header-nav a:hover,
+body[data-pagina="sobre"] .nav-dropdown-trigger.active,
+body[data-pagina="sobre"] .nav-dropdown-trigger:hover {
+  color: var(--primary);
+}
+
+/* ===== NOSSOS PRODUTOS: cards estilo "bolha" dos posts ===== */
+.about-produtos {
+  padding: var(--space-7) 0;
+  background: var(--bg);
+}
+
+.about-produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.produto-categoria-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.produto-categoria-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.produto-categoria-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: 0 6px 16px rgba(194, 24, 91, 0.3);
+}
+
+.produto-categoria-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.produto-categoria-card p {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ===== CTA final com o gradiente da marca =====
+   O fundo escuro da section não deve pintar o texto do card claro
+   (.contato-info) — só o que fica diretamente sobre o gradiente
+   (o título/subtítulo fora dos cards). */
+body[data-pagina="sobre"] .section-contato {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+/* Card de destaques igual ao card de texto ao lado (e ao das outras
+   páginas): fundo claro no modo claro, escuro no noturno. Antes era
+   translúcido sobre o magenta e os ícones magenta sumiam no fundo. */
+body[data-pagina="sobre"] .contato-card .destaque-icon {
+  background: color-mix(in srgb, var(--primary) 14%, var(--bg-card));
+  color: var(--primary);
+}
+
+body[data-pagina="sobre"] .contato-card .destaque-item:hover .destaque-icon {
+  background: linear-gradient(135deg, var(--primary), var(--highlight));
+  color: #fff;
+}
+
+/* ===== Footer com toque magenta no hover dos links ===== */
+body[data-pagina="sobre"] .footer-links a:hover {
+  color: var(--highlight);
+}
+
+/* ===== FOTO DA FUNDADORA: inteira e centralizada =====
+   A foto original é quadrada; no quadro 4:5 ela era cortada em cima
+   e embaixo. Agora o quadro segue o formato da foto, fica centralizado
+   na coluna e alinhado ao meio do texto. */
+.historia-image {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;
+}
+
+.historia-img-wrapper {
+  aspect-ratio: 1 / 1;
+}
+
+.historia-img-wrapper img {
+  object-position: center top;
+}
+
+.historia-badge {
+  right: -12px;
+  bottom: -12px;
+}
+
+@media (max-width: 767px) {
+  .historia-image { max-width: 360px; }
+  .historia-badge { right: 8px; }
+}

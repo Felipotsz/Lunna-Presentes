@@ -1,0 +1,36 @@
+/* components/rolagem-setas/rolagem-setas.css
+   Setas sobre as bordas de listas que rolam na horizontal. */
+
+.rolagem-moldura { position: relative; }
+
+.rolagem-seta {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-card) 94%, transparent);
+  color: var(--text-dark);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(36, 21, 43, 0.18);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.rolagem-seta[hidden] { display: none; }
+
+.rolagem-seta--ant { left: 4px; }
+.rolagem-seta--prox { right: 4px; }
+
+.rolagem-seta:hover,
+.rolagem-seta:focus-visible {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.rolagem-seta:active { transform: scale(0.94); }

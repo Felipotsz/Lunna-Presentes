@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Conheça a Vanessa, fundadora da Lunna Presentes — mãe, empreendedora e apaixonada por transformar ideias em presentes personalizados feitos com amor." />
+  <meta name="keywords"
+    content="sobre lunna presentes, vanessa, história, missão, visão, valores, presentes personalizados, tatuí" />
+  <meta name="author" content="Lunna Presentes" />
+  <title>Sobre Nós | Lunna Presentes</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Poppins:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../index.css" />
+  <link rel="stylesheet" href="../../themes/themes.css">
+  <link rel="stylesheet" href="about.css" />
+
+  <link rel="stylesheet" href="../../components/categorias-carrossel/categorias-carrossel.css" />
+
+  <!-- JavaScript -->
+  <script src="../../index.js" defer></script>
+  <script src="../../themes/themes.js"></script>
+  <script src="../../data/configs.data.js" defer></script>
+  <script src="about.js" defer></script>
+
+  <script src="../../components/categorias-carrossel/categorias-carrossel.js" defer></script>
+
+  <!-- Sistema de Acessibilidade -->
+  <script src="../../accessibility/accessibility.js" defer></script>
+  <link rel="stylesheet" href="../../accessibility/accessibility.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../assets/icons/favicon.png" />
+</head>
+
+<body data-pagina="sobre">
+
+  <!-- HEADER + MENU MOBILE (HTML fixo) -->
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <a href="../../index.html" class="header-logo" aria-label="Lunna Presentes — página inicial">
+          <div class="logo-icon" aria-hidden="true">
+            <img src="../../assets/images/logo_lunna_presentes.jpeg" alt="Lunna Presentes Logo" class="logo-img" />
+          </div>
+          <div class="logo-text">
+            Lunna Presentes
+            <span>Personalizados com carinho</span>
+          </div>
+        </a>
+
+        <nav class="header-nav" role="navigation" aria-label="Menu principal">
+          <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+          <a href="../../pages/about/about.html" class="active"><i class="fas fa-heart"></i> Sobre</a>
+          <div class="nav-dropdown">
+            <button class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+              <i class="fas fa-store"></i> Produtos <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="../../pages/personalizados/personalizados.html" role="menuitem"><i class="fas fa-palette"></i> Personalizados</a>
+              <a href="../../pages/roupas/roupas.html" role="menuitem"><i class="fas fa-shirt"></i> Lunna Mood</a>
+              <a href="../../pages/brindes-corporativos/brindes-corporativos.html" role="menuitem"><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+            </div>
+          </div>
+          <a href="../../pages/provador/provador.html"><i class="fas fa-wand-magic-sparkles"></i> Provador</a>
+          <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="theme-toggle" aria-label="Ativar modo escuro">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="header-whatsapp" class="btn btn-whatsapp header-cta" target="_blank" rel="noopener"
+            aria-label="Solicitar orçamento pelo WhatsApp">
+            <i class="fab fa-whatsapp"></i> Falar Conosco
+          </a>
+          <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu mobile" role="navigation">
+      <a href="../../index.html" data-nav><i class="fas fa-home"></i> Home</a>
+      <a href="../../pages/about/about.html" class="active" data-nav><i class="fas fa-heart"></i> Sobre</a>
+      <div class="mobile-nav-group">
+        <button class="mobile-nav-group-trigger" aria-expanded="false" aria-controls="mobile-produtos-submenu">
+          <i class="fas fa-store"></i> Produtos <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="mobile-nav-submenu" id="mobile-produtos-submenu">
+          <a href="../../pages/personalizados/personalizados.html" data-nav><i class="fas fa-palette"></i> Personalizados</a>
+          <a href="../../pages/roupas/roupas.html" data-nav><i class="fas fa-shirt"></i> Lunna Mood</a>
+          <a href="../../pages/brindes-corporativos/brindes-corporativos.html" data-nav><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+        </div>
+      </div>
+      <a href="../../pages/provador/provador.html" data-nav><i class="fas fa-wand-magic-sparkles"></i> Provador de estampas</a>
+      <a href="../../pages/contact/contact.html" data-nav><i class="fas fa-envelope"></i> Contato</a>
+      <div class="mobile-cta">
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="mobile-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+        </a>
+      </div>
+    </nav>
+
+  <div class="header-spacer"></div>
+
+  <main>
+    <!-- HISTÓRIA -->
+    <section class="about-historia" id="historia" aria-labelledby="historia-title">
+      <div class="container">
+        <div class="historia-grid">
+          <div class="historia-text reveal">
+            <span class="section-badge"><i class="fas fa-heart"></i> Prazer, Vanessa</span>
+            <h2 id="historia-title">Quem sou eu?</h2>
+            <p>
+              Sou mãe, esposa, empreendedora, tecnóloga em Gestão Empresarial, pisciana, apaixonada por cozinhar,
+              viajar e, principalmente, por fazer a diferença através do voluntariado.
+            </p>
+            <p>
+              A Lunna Presentes nasceu do meu jeito de enxergar o mundo: acredito que os pequenos detalhes carregam
+              grandes sentimentos. Foi assim que comecei a transformar ideias simples em canecas, azulejos,
+              camisetas, squeezes, kits e lembranças. Cada peça pensada para que um presente vá muito além do
+              objeto em si.
+            </p>
+            <p>
+              Cada presente conta uma história. E na Lunna Presentes, sua ideia ganha forma, carinho e
+              personalidade, porque mais que presentes, criamos lembranças que ficam no coração.
+            </p>
+            <div class="historia-btns"
+              style="display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap;">
+              <a href="#" id="historia-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> Fale com a Vanessa
+              </a>
+              <a href="../../index.html" class="btn btn-outline">
+                <i class="fas fa-gift"></i> Ver produtos
+              </a>
+            </div>
+          </div>
+          <div class="historia-image reveal">
+            <div class="historia-img-wrapper">
+              <img src="../../assets/images/about_img.jpeg"
+                alt="Vanessa, fundadora da Lunna Presentes" loading="lazy" />
+            </div>
+            <div class="historia-badge">
+              <span class="badge-number"><i class="fas fa-hand-holding-heart"></i></span>
+              <span class="badge-label">Feito com Amor</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARROSSEL DE TIPOS DE PRODUTO (components/categorias-carrossel) -->
+    <section class="section-cat-circ" data-categorias-carrossel data-base="../../" aria-label="Tipos de produto"></section>
+
+    <!-- MISSÃO / VISÃO / VALORES -->
+    <section class="about-mvv" aria-labelledby="mvv-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-bullseye"></i> Propósito</span>
+          <h2 class="section-title" id="mvv-title">O que nos move todos os dias</h2>
+          <p class="section-subtitle">Missão, visão e valores que guiam cada criação</p>
+        </div>
+
+        <div class="mvv-grid">
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-bullseye"></i></div>
+            <h3>Missão</h3>
+            <p>Transformar ideias em presentes que ganham forma, carinho e personalidade — porque cada presente
+              conta uma história.</p>
+          </div>
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-eye"></i></div>
+            <h3>Visão</h3>
+            <p>Ser a primeira lembrança de quem quer presentear com amor em Tatuí e região, reconhecida pela
+              qualidade e pelo cuidado em cada detalhe.</p>
+          </div>
+          <div class="mvv-card reveal">
+            <div class="mvv-icon" aria-hidden="true"><i class="fas fa-heart"></i></div>
+            <h3>Valores</h3>
+            <ul class="mvv-values">
+              <li><i class="fas fa-heart mvv-value-icon mvv-value-icon--rose" aria-hidden="true"></i> Amor em cada
+                detalhe
+              </li>
+              <li><i class="fas fa-lightbulb mvv-value-icon mvv-value-icon--amber" aria-hidden="true"></i> Criatividade
+                sem
+                limites</li>
+              <li><i class="fas fa-handshake mvv-value-icon mvv-value-icon--green" aria-hidden="true"></i> Compromisso
+                com o cliente
+              </li>
+              <li><i class="fas fa-medal mvv-value-icon mvv-value-icon--gold" aria-hidden="true"></i> Qualidade acima de
+                tudo</li>
+              <li><i class="fas fa-hand-holding-heart mvv-value-icon mvv-value-icon--teal" aria-hidden="true"></i>
+                Voluntariado e
+                propósito
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== NOSSOS PRODUTOS ====== -->
+    <section class="about-produtos" aria-labelledby="produtos-about-title">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-badge"><i class="fas fa-gift"></i> Nossa linha</span>
+          <h2 class="section-title" id="produtos-about-title">Principais produtos da Lunna</h2>
+          <p class="section-subtitle">Personalizados com amor, feitos para encantar</p>
+        </div>
+
+        <div class="about-produtos-grid reveal">
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-mug-hot"></i></div>
+            <h3>Canecas</h3>
+            <p>Canecas de porcelana com frases, fotos e temas exclusivos para cada ocasião.</p>
+          </div>
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-table-cells"></i></div>
+            <h3>Azulejos</h3>
+            <p>Azulejos personalizados com fotos e homenagens que viram lembranças eternas.</p>
+          </div>
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-shirt"></i></div>
+            <h3>Personalizados em Tecido</h3>
+            <p>Camisetas, temáticas e uniformes empresariais — vista o que te representa.</p>
+          </div>
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-bottle-water"></i></div>
+            <h3>Squeezes</h3>
+            <p>Squeezes de alumínio esportivos, corporativos e com nome, foto ou personagem.</p>
+          </div>
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-briefcase"></i></div>
+            <h3>Presentes Corporativos</h3>
+            <p>Brindes institucionais que fortalecem laços, valorizam pessoas e conquistam parceiros.</p>
+          </div>
+          <div class="produto-categoria-card">
+            <div class="produto-categoria-icon"><i class="fas fa-gifts"></i></div>
+            <h3>Lembrancinhas e Datas Especiais</h3>
+            <p>Kits presenteáveis para aniversários, formaturas, Dia das Mães, Natal e muito mais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO DE "CONTATO" -->
+    <section class="section-contato" id="contato" aria-labelledby="contato-title">
+      <div class="container">
+        <div class="contato-grid">
+          <div class="contato-info reveal">
+            <span class="section-badge"><i class="fas fa-headset"></i> Atendimento</span>
+            <h2 id="contato-title">Estamos aqui para ajudar</h2>
+            <p>Tire suas dúvidas, faça um orçamento ou peça ajuda para montar o presente perfeito.</p>
+            <ul class="contato-list">
+              <li><i class="fas fa-check-circle"></i> Produção em até 3 dias úteis</li>
+              <li><i class="fas fa-gift"></i> Embalagem especial para presente</li>
+              <li><i class="fas fa-envelope"></i> Cartão mensagem incluído</li>
+              <li><i class="fas fa-shield-alt"></i> Garantia de qualidade</li>
+            </ul>
+            <div class="contato-actions">
+              <a href="#" id="contato-whatsapp" class="btn btn-whatsapp" target="_blank" rel="noopener"
+                aria-label="Falar pelo WhatsApp">
+                <i class="fab fa-whatsapp"></i> Falar pelo WhatsApp
+              </a>
+              <a href="#" class="btn btn-outline">
+                <i class="fas fa-envelope"></i> Enviar e-mail
+              </a>
+            </div>
+          </div>
+          <div class="contato-card reveal">
+            <div class="contato-destaques">
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-map-marker-alt"></i></span>
+                <div>
+                  <strong>Localização</strong>
+                  <p>Tatuí, SP — Atendemos online e presencial</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                <div>
+                  <strong>Horário</strong>
+                  <p>Segunda a Sábado, das 9h às 18h</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-credit-card"></i></span>
+                <div>
+                  <strong>Pagamento</strong>
+                  <p>PIX, cartão de crédito e débito</p>
+                </div>
+              </div>
+              <div class="destaque-item">
+                <span class="destaque-icon" aria-hidden="true"><i class="fas fa-truck"></i></span>
+                <div>
+                  <strong>Envios</strong>
+                  <p>Correios, Motoboy e retirada local</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ATENDIMENTO VIA WHATSAPP (HTML fixo) -->
+      <section class="contact-banner" aria-labelledby="banner-title">
+    <div class="container">
+      <div class="banner-box reveal">
+        <div class="banner-icon" aria-hidden="true">
+          <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="banner-text">
+          <h2 id="banner-title">Atendimento via WhatsApp</h2>
+          <p>Resposta rápida, orçamento em minutos e acompanhamento personalizado.</p>
+          <ul class="banner-lista">
+            <li><i class="fas fa-bolt"></i> Resposta em até 5min</li>
+            <li><i class="fas fa-image"></i> Envio de fotos e artes</li>
+            <li><i class="fas fa-chart-line"></i> Acompanhamento do pedido</li>
+          </ul>
+        </div>
+        <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="banner-whatsapp" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Falar Agora
+        </a>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- RODAPÉ (HTML fixo) -->
+    <footer class="site-footer" role="contentinfo">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="logo-text" style="margin-bottom: 12px;">
+              <div class="footer-logo">
+                <img src="../../assets/images/logo_lunna_presentes.jpeg" alt="Lunna Presentes" class="logo-img" />
+              </div>
+              Lunna Presentes
+              <span>Personalizados com carinho</span>
+            </div>
+            <p>Transformamos momentos em memórias eternas com presentes únicos e cheios de significado.</p>
+            <div class="footer-social">
+              <a href="#" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social-btn" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+              <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20personalizados%20da%20Lunna%20Presentes." id="footer-social-whatsapp" class="social-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Links Rápidos</h4>
+            <nav class="footer-links" aria-label="Links rápidos">
+              <a href="../../index.html"><i class="fas fa-home"></i> Home</a>
+              <a href="../../pages/about/about.html"><i class="fas fa-heart"></i> Sobre</a>
+              <a href="../../pages/provador/provador.html"><i class="fas fa-wand-magic-sparkles"></i> Provador de estampas</a>
+              <a href="../../pages/contact/contact.html"><i class="fas fa-envelope"></i> Contato</a>
+            </nav>
+          </div>
+
+          <div class="footer-col">
+            <h4 class="footer-col-title">Nossos Serviços</h4>
+            <nav class="footer-links" aria-label="Nossos serviços">
+              <a href="../../pages/personalizados/personalizados.html"><i class="fas fa-palette"></i> Personalizados</a>
+              <a href="../../pages/roupas/roupas.html"><i class="fas fa-shirt"></i> Lunna Mood</a>
+              <a href="../../pages/brindes-corporativos/brindes-corporativos.html"><i class="fas fa-briefcase"></i> Brindes Corporativos</a>
+            </nav>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-payment">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-pix"></i>
+          </div>
+          <div class="footer-copyright">
+            <p>&copy; <span id="currentYear">2026</span> Lunna Presentes. Feito com <i class="fas fa-heart"></i> para você.
+            </p>
+            <p>Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <!-- ACESSIBILIDADE (HTML fixo) -->
+    <button id="accessibility-toggle" class="accessibility-toggle"
+      aria-label="Abrir painel de configurações de acessibilidade" aria-expanded="false"
+      aria-controls="accessibility-panel">
+      <i class="fas fa-universal-access" aria-hidden="true"></i>
+      <span class="sr-only">Acessibilidade</span>
+    </button>
+
+    <!-- Painel de Acessibilidade -->
+    <aside id="accessibility-panel" class="accessibility-panel" aria-label="Painel de Configurações de Acessibilidade"
+      aria-hidden="true" role="dialog">
+
+      <div class="panel-header">
+        <div class="panel-title">
+          <i class="fas fa-universal-access" aria-hidden="true"></i>
+          <h2>Acessibilidade</h2>
+        </div>
+        <button id="close-panel" class="close-panel" aria-label="Fechar painel">
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="panel-content">
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-font" aria-hidden="true"></i>
+            Tamanho da Fonte
+          </h3>
+          <div class="font-controls">
+            <button id="decrease-font" class="accessibility-btn" aria-label="Diminuir fonte">
+              <i class="fas fa-minus"></i><span>A-</span>
+            </button>
+            <div class="font-display" id="current-font-size">100%</div>
+            <button id="increase-font" class="accessibility-btn" aria-label="Aumentar fonte">
+              <i class="fas fa-plus"></i><span>A+</span>
+            </button>
+            <button id="reset-font" class="accessibility-btn reset-btn">
+              <i class="fas fa-undo"></i><span>Padrão</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-adjust"></i>
+            Contraste
+          </h3>
+          <button id="toggle-contrast" class="accessibility-btn contrast-btn" aria-pressed="false">
+            <i class="fas fa-circle"></i><span>Alto Contraste</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-eye"></i>
+            Modo de Visão
+          </h3>
+          <div class="vision-buttons">
+            <button id="colorblind-mode" class="accessibility-btn vision-btn" aria-pressed="false">
+              <i class="fas fa-eye"></i><span>Visão Normal</span>
+            </button>
+            <button id="reduced-motion" class="accessibility-btn vision-btn" aria-pressed="false">
+              <i class="fas fa-running"></i><span>Reduzir Animações</span>
+            </button>
+          </div>
+          <div class="vision-info" style="margin-top: 0.5rem; font-size: 0.8rem; color: var(--text-light);">
+            <small>Clique para alternar entre modos: Normal → Deuteranopia → Protanopia → Tritanopia →
+              Acromatopsia</small>
+          </div>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-book-reader"></i>
+            Leitura
+          </h3>
+          <button id="highlight-links" class="accessibility-btn" aria-pressed="false">
+            <i class="fas fa-link"></i><span>Destacar Links</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-mouse-pointer"></i>
+            Navegação
+          </h3>
+          <button id="focus-helper" class="accessibility-btn" aria-pressed="false">
+            <i class="fas fa-crosshairs"></i><span>Foco Aumentado</span>
+          </button>
+        </section>
+
+        <section class="accessibility-section">
+          <h3 class="section-title">
+            <i class="fas fa-life-ring"></i>
+            Ajuda
+          </h3>
+          <button id="keyboard-shortcuts" class="accessibility-btn">
+            <i class="fas fa-keyboard"></i><span>Atalhos</span>
+          </button>
+          <button id="reset-all" class="accessibility-btn reset-all-btn">
+            <i class="fas fa-redo"></i><span>Restaurar Padrões</span>
+          </button>
+        </section>
+      </div>
+
+      <div class="panel-footer">
+        <div class="status-indicator">
+          <i class="fas fa-check-circle"></i>
+          <span id="status-message">Configurações aplicadas</span>
+        </div>
+        <div class="panel-info">
+          <small>Configurações salvas automaticamente</small>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Overlay do Painel -->
+    <div id="panel-overlay" class="panel-overlay" aria-hidden="true"></div>
+
+    <!-- Modal de Atalhos -->
+    <div id="shortcuts-modal" class="accessibility-modal" aria-hidden="true" role="dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Atalhos de Teclado</h3>
+          <button id="close-shortcuts" class="close-modal" aria-label="Fechar">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="shortcuts-list">
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>A</kbd> <span>Abrir/Fechar painel</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>+</kbd> <span>Aumentar fonte</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>-</kbd> <span>Diminuir fonte</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>C</kbd> <span>Alto contraste</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>D</kbd> <span>Modo daltônico</span></div>
+            <div class="shortcut-item"><kbd>Alt</kbd> + <kbd>R</kbd> <span>Reduzir animações</span></div>
+            <div class="shortcut-item"><kbd>Tab</kbd> <span>Navegar entre elementos</span></div>
+            <div class="shortcut-item"><kbd>Esc</kbd> <span>Fechar painéis</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

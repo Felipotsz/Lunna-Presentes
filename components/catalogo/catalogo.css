@@ -1,0 +1,286 @@
+/* components/catalogo/catalogo.css
+   Busca + botão "Filtros" e ajustes da grade de produtos no celular,
+   usados nas páginas Personalizados, Lunna Mood e Brindes Corporativos. */
+
+/* O botão de limpar a busca tem display:flex e ignorava o atributo hidden */
+.search-clear[hidden] { display: none !important; }
+
+/* ===== BUSCA + FILTROS ===== */
+.busca-filtros {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.busca-filtros .search-wrapper {
+  flex: 1;
+  max-width: none;
+  min-width: 0;
+}
+
+.filtros-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.filtros-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dark);
+  font: 600 0.9rem var(--font-body);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+}
+
+.filtros-btn i { color: var(--primary); }
+.filtros-btn:hover,
+.filtros-wrap.aberto .filtros-btn { border-color: var(--primary); }
+
+.filtros-btn.filtrando {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.filtros-btn.filtrando i { color: #fff; }
+
+.filtros-btn-ativo {
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.25);
+  font-size: 0.78rem;
+}
+
+.filtros-btn-ativo[hidden] { display: none; }
+
+/* Menu suspenso (computador) */
+.filtros-painel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 300;
+  width: min(460px, 90vw);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  animation: filtrosEntrar 0.18s ease;
+}
+
+.filtros-painel[hidden],
+.filtros-fundo[hidden] { display: none; }
+
+@keyframes filtrosEntrar {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.filtros-painel-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 4px var(--space-2);
+  margin-bottom: var(--space-1);
+  border-bottom: 1px solid var(--border);
+}
+
+.filtros-painel-topo strong {
+  font-family: var(--font-display);
+  color: var(--text-dark);
+}
+
+.filtros-fechar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-soft);
+  color: var(--text-light);
+  cursor: pointer;
+}
+
+.filtros-fechar:hover { color: var(--primary); }
+
+/* Dentro do menu, as categorias viram uma lista em 2 colunas */
+.filtros-painel .filters-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  overflow: visible;
+  padding: 0;
+}
+
+.filtros-painel .filter-pill {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border-width: 1px;
+  font-size: 0.85rem;
+  white-space: normal;
+  text-align: left;
+  line-height: 1.25;
+}
+
+.filtros-painel .filter-pill i {
+  width: 18px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.filtros-painel .filter-pill .filter-count { margin-left: auto; }
+
+/* "Todos" ocupa a linha inteira */
+.filtros-painel .filter-pill[data-category="all"] { grid-column: 1 / -1; }
+
+.filtros-fundo { display: none; }
+
+/* Status ("41 produtos") centralizado com a barra */
+.products-controls .results-status {
+  justify-content: center;
+}
+
+/* ===== CELULAR ===== */
+@media (max-width: 640px) {
+  .busca-filtros { gap: 8px; }
+
+  .filtros-btn {
+    height: 46px;
+    padding: 0 14px;
+  }
+
+  /* No celular o botão mostra só o ícone e a categoria escolhida */
+  .filtros-btn-texto { display: none; }
+  .filtros-btn:not(.filtrando) .filtros-btn-texto { display: inline; }
+  .filtros-btn-ativo { max-width: 90px; }
+
+  /* Painel que sobe da parte de baixo da tela */
+  .filtros-fundo {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 2990;
+    background: rgba(20, 16, 24, 0.45);
+  }
+
+  .filtros-painel {
+    position: fixed;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3000;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: var(--space-2) var(--space-2) calc(var(--space-3) + env(safe-area-inset-bottom));
+    animation: filtrosSubir 0.22s ease;
+  }
+
+  .filtros-painel-topo::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 40px;
+    height: 4px;
+    margin-left: -20px;
+    border-radius: 4px;
+    background: var(--border);
+  }
+
+  .filtros-painel-topo { padding-top: 12px; }
+
+  body.filtros-abertos { overflow: hidden; }
+}
+
+@keyframes filtrosSubir {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+
+/* ===== GRADE DE PRODUTOS NO CELULAR =====
+   2 colunas com cards mais compactos: título e descrição limitados a
+   2 linhas e os dois botões lado a lado (WhatsApp só com o ícone). */
+@media (max-width: 640px) {
+  .products-catalog .container { padding-left: 16px; padding-right: 16px; }
+
+  .products-grid-full { gap: 12px; }
+
+  .products-grid-full .product-card { border-radius: var(--radius-md); }
+
+  .products-grid-full .product-card-image { aspect-ratio: 1; }
+
+  .products-grid-full .badge-custom,
+  .products-grid-full .badge-new {
+    font-size: 0.6rem;
+    padding: 3px 7px;
+  }
+
+  .products-grid-full .badge-custom { display: none; }
+
+  .products-grid-full .product-card-body {
+    padding: 10px;
+    gap: 6px;
+  }
+
+  .products-grid-full .product-card-name {
+    font-size: 0.86rem;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .products-grid-full .product-card-desc {
+    font-size: 0.74rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .products-grid-full .product-card-price { font-size: 1rem; }
+  .products-grid-full .product-card-price--consulta { font-size: 0.8rem; }
+
+  .products-grid-full .product-card-actions {
+    flex-direction: row;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  .products-grid-full .product-card-actions .btn {
+    width: auto;
+    padding: 8px 6px;
+    font-size: 0.74rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* WhatsApp vira um botão quadrado só com o ícone */
+  .products-grid-full .product-card-actions:not(.product-card-actions--consultar) .btn-whatsapp {
+    flex: 0 0 38px;
+    font-size: 0;
+    gap: 0;
+  }
+
+  .products-grid-full .product-card-actions:not(.product-card-actions--consultar) .btn-whatsapp i {
+    font-size: 1rem;
+  }
+}

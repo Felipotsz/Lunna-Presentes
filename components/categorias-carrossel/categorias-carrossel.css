@@ -1,0 +1,221 @@
+/* components/categorias-carrossel/categorias-carrossel.css
+   Faixa com círculos de categoria + rótulo abaixo, setas nas laterais.
+   Usa apenas variáveis do tema (themes.css), então acompanha o modo
+   escuro e a paleta própria da Lunna Mood automaticamente. */
+
+.section-cat-circ {
+  background: var(--bg-soft);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cat-circ-title {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.6vw, 1.85rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-4);
+}
+
+.cat-circ-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.cat-circ-track {
+  list-style: none;
+  margin: 0;
+  padding: 6px 4px 4px;
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.cat-circ-track::-webkit-scrollbar { display: none; }
+
+.cat-circ-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.cat-circ-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 128px;
+  text-decoration: none;
+  color: var(--text-dark);
+  border-radius: var(--radius-md);
+  outline-offset: 4px;
+}
+
+/* Círculo */
+.cat-circ-bubble {
+  position: relative;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  color: #fff;
+  font-size: 2.4rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* Anel que aparece no hover / categoria ativa */
+.cat-circ-bubble::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0 var(--primary);
+  transition: box-shadow var(--transition);
+}
+
+.cat-circ-bubble img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #fff;
+  transition: transform var(--transition);
+}
+
+.cat-circ-link:hover .cat-circ-bubble img {
+  transform: scale(1.08);
+}
+
+/* Com foto, o círculo ganha uma borda fina para destacar do fundo */
+.cat-circ-bubble:has(img) {
+  border: 3px solid var(--bg-card);
+}
+
+.cat-circ-bubble i {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* 4 tons que se alternam, todos derivados da paleta do tema */
+.cat-circ-tone-0 { background: linear-gradient(135deg, var(--primary), var(--highlight)); }
+.cat-circ-tone-1 { background: linear-gradient(135deg, var(--highlight), var(--secondary, var(--accent))); }
+.cat-circ-tone-2 { background: linear-gradient(135deg, var(--accent), var(--primary)); }
+.cat-circ-tone-3 { background: linear-gradient(135deg, var(--secondary, var(--highlight)), var(--primary)); }
+
+/* Na Lunna Mood a paleta é terrosa: tons mais sóbrios e sem o ciano */
+body[data-servico="roupas"] .cat-circ-tone-1,
+body[data-servico="roupas"] .cat-circ-tone-3 {
+  background: linear-gradient(135deg, var(--primary-dark, var(--primary)), var(--highlight));
+}
+
+.cat-circ-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.25;
+  transition: color var(--transition-fast);
+}
+
+.cat-circ-link:hover .cat-circ-bubble,
+.cat-circ-link:focus-visible .cat-circ-bubble {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.cat-circ-link:hover .cat-circ-bubble::after,
+.cat-circ-link:focus-visible .cat-circ-bubble::after {
+  box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.85);
+}
+
+.cat-circ-link:hover .cat-circ-label,
+.cat-circ-link:focus-visible .cat-circ-label,
+.cat-circ-link.is-active .cat-circ-label {
+  color: var(--primary);
+}
+
+.cat-circ-link.is-active .cat-circ-bubble {
+  box-shadow: 0 0 0 4px var(--bg-soft), 0 0 0 7px var(--primary);
+}
+
+/* Setas */
+.cat-circ-arrow {
+  flex: 0 0 auto;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-dark);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  margin-bottom: 34px; /* alinha com o centro do círculo, não do rótulo */
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.cat-circ-arrow:hover:not(:disabled) {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.cat-circ-arrow:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* Quando todas cabem na tela, as setas somem e os itens centralizam */
+.cat-circ--sem-rolagem .cat-circ-arrow { visibility: hidden; }
+.cat-circ--sem-rolagem .cat-circ-track { justify-content: center; }
+
+/* Mobile: deslizar com o dedo; setas escondidas, círculos menores
+   e um "pedaço" do próximo item à mostra para indicar rolagem */
+@media (max-width: 640px) {
+  .section-cat-circ { padding: var(--space-4) 0; }
+  .cat-circ-title { margin-bottom: var(--space-3); }
+  .cat-circ-track { gap: 4px; }
+  .cat-circ-link { width: 100px; gap: 8px; }
+  .cat-circ-bubble { width: 76px; height: 76px; font-size: 1.7rem; }
+  .cat-circ-label { font-size: 0.64rem; letter-spacing: 0; }
+}
+
+/* Alto contraste / redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .cat-circ-track { scroll-behavior: auto; }
+  .cat-circ-bubble { transition: none; }
+}
+
+/* Celular: setas menores sobre as bordas da faixa, indicando que dá
+   para arrastar. Somem quando não há mais círculos para aquele lado. */
+@media (max-width: 640px) {
+  .cat-circ-arrow {
+    position: absolute;
+    top: 38px;              /* metade do círculo (76px) + respiro do topo */
+    z-index: 3;
+    width: 34px;
+    height: 34px;
+    margin: -11px 0 0;
+    font-size: 0.8rem;
+    background: color-mix(in srgb, var(--bg-card) 94%, transparent);
+    box-shadow: 0 6px 16px rgba(36, 21, 43, 0.18);
+  }
+  .cat-circ-prev { left: -4px; }
+  .cat-circ-next { right: -4px; }
+  .cat-circ-arrow:disabled { visibility: hidden; }
+}

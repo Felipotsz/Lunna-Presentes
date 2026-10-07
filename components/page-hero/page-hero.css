@@ -1,0 +1,319 @@
+/* components/page-hero/page-hero.css
+   Topo das páginas Personalizados, Lunna Mood, Brindes e Contato:
+   texto e botões à esquerda, imagem emoldurada com um selo flutuante
+   à direita. Só usa variáveis do tema, então acompanha o modo escuro e
+   a paleta própria da Lunna Mood. */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-6) 0 var(--space-7);
+  background:
+    radial-gradient(ellipse 55% 70% at 88% 8%, color-mix(in srgb, var(--primary) 9%, transparent) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 0% 100%, color-mix(in srgb, var(--highlight) 6%, transparent) 0%, transparent 70%),
+    var(--bg);
+}
+
+.page-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+@media (min-width: 960px) {
+  .page-hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+/* ===== TEXTO ===== */
+.page-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-dark, var(--primary));
+  margin-bottom: var(--space-2);
+}
+
+.page-hero-eyebrow i { color: var(--accent); }
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.2vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin: 0 0 var(--space-3);
+  max-width: 13ch;
+}
+
+/* Palavras em destaque com degradê roxo → rosa */
+.page-hero h1 em {
+  font-style: normal;
+  background: linear-gradient(100deg, var(--highlight) 0%, var(--primary) 70%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-hero-texto > p {
+  font-size: 1.06rem;
+  line-height: 1.7;
+  color: var(--text-light);
+  max-width: 52ch;
+  margin: 0 0 var(--space-4);
+}
+
+.page-hero-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page-hero-acoes .btn {
+  padding: 14px 24px;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+}
+
+.btn-hero-principal {
+  background: linear-gradient(100deg, var(--highlight) 0%, var(--primary) 100%);
+  color: #fff;
+  border: none;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 28%, transparent);
+}
+
+.btn-hero-principal:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--primary) 36%, transparent);
+}
+
+.btn-hero-secundario {
+  background: var(--bg-card);
+  color: var(--primary-dark, var(--primary));
+  border: 1px solid var(--border);
+}
+
+.btn-hero-secundario:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.page-hero-selos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 0;
+  margin: var(--space-3) 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.page-hero-selos li { display: inline-flex; align-items: center; gap: 6px; }
+.page-hero-selos i { color: var(--primary); }
+
+/* ===== IMAGEM ===== */
+.page-hero-visual {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 560px;
+}
+
+.page-hero-moldura {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 32px;
+  overflow: hidden;
+  background: var(--bg-soft);
+  box-shadow: 0 30px 60px -20px color-mix(in srgb, var(--primary-dark, #000) 35%, transparent), var(--shadow-md);
+}
+
+.page-hero-moldura img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Logos: aparecem inteiras sobre o fundo da moldura */
+.page-hero-moldura--logo {
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 30% 20%, var(--bg-card) 0%, transparent 60%),
+    linear-gradient(160deg, var(--bg-soft) 0%, color-mix(in srgb, var(--primary) 10%, var(--bg-soft)) 100%);
+}
+
+.page-hero-moldura--logo img {
+  width: 82%;
+  height: auto;
+  max-height: 82%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Logo circular (Lunna Mood) */
+.page-hero-moldura--logo img.circulo {
+  width: 74%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Selo flutuante no canto inferior esquerdo */
+.page-hero-selo {
+  position: absolute;
+  left: -28px;
+  bottom: 28px;
+  max-width: 280px;
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 16px 20px;
+  box-shadow: 0 18px 40px -12px rgba(36, 21, 43, 0.28);
+  border: 1px solid var(--border);
+}
+
+.page-hero-selo strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--primary-dark, var(--primary));
+  line-height: 1.25;
+}
+
+.page-hero-selo span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin-top: 2px;
+}
+
+/* ===== VARIAÇÃO DO CONTATO: cartão de atendimento no lugar da imagem ===== */
+.page-hero-moldura--contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-5) var(--space-4);
+  color: #fff;
+  background:
+    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.18) 0 90px, transparent 91px),
+    radial-gradient(circle at 10% 95%, rgba(255, 255, 255, 0.1) 0 120px, transparent 121px),
+    linear-gradient(140deg, var(--text-dark) 0%, var(--primary-dark, var(--primary)) 45%, var(--primary) 100%);
+}
+
+.contato-hero-icone {
+  width: 72px;
+  height: 72px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  font-size: 2.2rem;
+  background: #25d366;
+  color: #fff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.page-hero-moldura--contato h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #fff;
+  margin: 0;
+}
+
+.page-hero-moldura--contato p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.6;
+}
+
+.contato-hero-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contato-hero-lista li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+.contato-hero-lista i {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.9rem;
+}
+
+.contato-hero-btn {
+  align-self: flex-start;
+  background: #fff;
+  color: var(--primary-dark, var(--primary));
+  font-weight: 700;
+  border-radius: var(--radius-md);
+}
+
+.contato-hero-btn:hover { background: #fff; color: var(--primary); transform: translateY(-2px); }
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 959px) {
+  .page-hero { padding: var(--space-5) 0 var(--space-6); }
+  .page-hero-texto { text-align: center; }
+  .page-hero h1 { margin-left: auto; margin-right: auto; }
+  .page-hero-texto > p { margin-left: auto; margin-right: auto; }
+  .page-hero-acoes, .page-hero-selos { justify-content: center; }
+  .page-hero-visual { max-width: 480px; }
+  .page-hero-selo { left: 16px; bottom: -22px; }
+}
+
+@media (max-width: 560px) {
+  .page-hero { padding: var(--space-4) 0 var(--space-6); }
+  .page-hero-acoes .btn { width: 100%; justify-content: center; }
+  .page-hero-moldura { border-radius: 24px; }
+  .page-hero-moldura--contato { aspect-ratio: auto; padding: var(--space-4) var(--space-3); }
+  .contato-hero-btn { align-self: stretch; justify-content: center; }
+  .page-hero-selo { left: 12px; right: 12px; max-width: none; padding: 12px 16px; }
+}
+
+/* Entrada suave */
+.page-hero-texto > *,
+.page-hero-visual {
+  animation: pageHeroEntrar 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.page-hero-texto > *:nth-child(2) { animation-delay: 0.06s; }
+.page-hero-texto > *:nth-child(3) { animation-delay: 0.12s; }
+.page-hero-texto > *:nth-child(4) { animation-delay: 0.18s; }
+.page-hero-visual { animation-delay: 0.15s; }
+
+@keyframes pageHeroEntrar {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero-texto > *, .page-hero-visual { animation: none; }
+}
+
+body[data-accessibility-motion="reduced"] .page-hero-texto > *,
+body[data-accessibility-motion="reduced"] .page-hero-visual { animation: none; }
